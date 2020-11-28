@@ -75,7 +75,7 @@
     },
     created: function() {
       axios
-        .get("/api/users/1")
+        .get("/api/users/current")
         .then(response => {
           this.user = response.data;
         });
