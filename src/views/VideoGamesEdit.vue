@@ -79,7 +79,7 @@ export default {
         {value: "ps1", display: "Sony Playstation"},
         {value: "gamecube", display: "Nintendo Gamecube"},
         {value: "ps2", display: "Sony Playstation 2"},
-        {value: "xbox", display: "Microsoft XBox"},
+        {value: "xbox_og", display: "Microsoft XBox"},
         {value: "wii", display: "Nintendo Wii"},
         {value: "ps3", display: "Sony Playstation 3"},
         {value: "xbox_360", display: "Microsoft XBox 360"},

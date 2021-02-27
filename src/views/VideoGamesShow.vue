@@ -34,6 +34,9 @@
       <router-link v-bind:to="'/video_games/' + video_game.id + '/edit'">Edit Video Game Info</router-link>
     </div>
 
+    <div>
+      <router-link to="/video_games" class="btn btn-primary">Add Cartridges to Collection</router-link>
+    </div>
   </div>
 </template>
 

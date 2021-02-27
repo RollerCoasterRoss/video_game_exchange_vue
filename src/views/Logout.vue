@@ -14,7 +14,7 @@ export default {
     this.$parent.userEmail = "";
     localStorage.removeItem("userEmail");
 
-    this.$router.push("/");
+    this.$router.push("/login");
   }
 };
 </script>

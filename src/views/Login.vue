@@ -15,6 +15,10 @@
       </div>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
+
+    <div>
+      <router-link to="/signup" class="btn btn-primary">Sign Up</router-link>
+    </div>
   </div>
 </template>
 

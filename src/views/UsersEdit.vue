@@ -41,6 +41,32 @@
       <input type="submit" value="Update">
     </form>
 
+    <div>
+      <h2>My Cartridges</h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Platform</th>
+            <th scope="col">Available</th>
+            <th scope="col">Borrowed By</th>
+            <th scope="col">Borrowed On</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="cartridge in cartridges" :class="{'table-success': !cartridge.borrower_id, 'table-danger': cartridge.borrower_id}">
+            <th scope="row">{{ cartridge.video_game.title }}</th>
+            <td>{{ cartridge.video_game.formatted.platform }}</td>
+            <td>{{ cartridge.borrower_id ? "No" : "Yes" }}</td>
+            <td>{{ cartridge.borrower_id ? cartridge.borrower_name : "N/A" }}</td>
+            <td>{{ cartridge.borrower_id ? cartridge.lend_date : "N/A" }}</td>
+            <td><button v-if="!cartridge.borrower_id" class="btn btn-secondary" @click="destroyCartridge(cartridge)">Throw Away</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 </template>
 
@@ -62,15 +88,22 @@
           state: "",
           zip: "",
         },
+        cartridges: [],
         errors: []
       };
     },
     created: function() {
       axios
-      .get("/api/users/" + this.$route.params.id)
-      .then(response => {
-        this.user = response.data;
-      });
+        .get("/api/users/" + this.$route.params.id)
+        .then(response => {
+          this.user = response.data;
+        });
+
+      axios
+        .get("/api/cartridges/owned")
+        .then(response => {
+          this.cartridges = response.data;
+        });
     },
     methods: {
       updateUser: function() {
@@ -82,12 +115,21 @@
           state: this.user.state,
           zip: this.user.zip,
         };
+
         axios
           .patch("/api/users/" + this.$route.params.id, clientParams)
           .then(response => {
-            this.$router.push("/users/" + this.$route.params.id);
+            this.$router.push("/profile");
           }).catch(error => {
             this.errors = error.response.data.errors;
+          });
+      },
+      destroyCartridge: function(cartridgeObject) {
+        axios
+          .delete("/api/cartridges/" + cartridgeObject.id)
+          .then(response => {
+            var index = this.cartridges.indexOf(cartridgeObject);
+            this.cartridges.splice(index, 1);
           });
       }
     }

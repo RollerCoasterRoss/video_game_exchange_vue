@@ -21,6 +21,7 @@
               <th scope="col">Available</th>
               <th scope="col">Borrowed By</th>
               <th scope="col">Borrowed On</th>
+              <th scope="col"></th>
             </tr>
           </thead>
           <tbody>
@@ -30,20 +31,25 @@
               <td>Yes</td>
               <td>Me</td>
               <td>{{ borrowed_cartridge.lend_date }}</td>
+              <td><button class="btn btn-secondary" @click="returnCartridge(borrowed_cartridge.id)">Return</button></td>
             </tr>
-            <tr v-for="owned_cartridge in owned_cartridges" v-bind:class="{'table-success': !owned_cartridge.borrower_id, 'table-danger': owned_cartridge.borrower_id}">
+            <tr v-for="owned_cartridge in owned_cartridges" :class="{'table-success': !owned_cartridge.borrower_id, 'table-danger': owned_cartridge.borrower_id}">
               <th scope="row">{{ owned_cartridge.video_game.title }}</th>
               <td>{{ owned_cartridge.video_game.formatted.platform }}</td>
               <td>{{ owned_cartridge.borrower_id ? "No" : "Yes" }}</td>
               <td>{{ owned_cartridge.borrower_id ? owned_cartridge.borrower_name : "N/A" }}</td>
               <td>{{ owned_cartridge.borrower_id ? owned_cartridge.lend_date : "N/A" }}</td>
+              <td></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div>
-        <router-link v-bind:to="'/users/' + user.id + '/edit'">Edit</router-link>
+        <router-link :to="'/users/' + user.id + '/edit'" class="btn btn-primary">Edit</router-link>
+      </div>
+      <div>
+        <router-link to="/video_games" class="btn btn-primary">Add Cartridge to Collection</router-link>
       </div>
 
   </div>
@@ -84,12 +90,23 @@
         .then(response => {
           this.owned_cartridges = response.data;
         });
-      axios
-        .get("/api/cartridges/borrowed")
-        .then(response => {
-          this.borrowed_cartridges = response.data;
-        });   
+      this.retrieveBorrowedCartridges();
     },
-    methods: {}
+    methods: {
+      returnCartridge: function(cartridgeId) {
+        axios
+          .patch(`/api/cartridges/${cartridgeId}`, {borrow: false})
+          .then(response => {
+            this.retrieveBorrowedCartridges();
+          });
+      },
+      retrieveBorrowedCartridges: function() {
+        axios
+          .get("/api/cartridges/borrowed")
+          .then(response => {
+            this.borrowed_cartridges = response.data;
+          });
+      }
+    }
   };
 </script>
