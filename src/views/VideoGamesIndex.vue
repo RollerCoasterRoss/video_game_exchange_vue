@@ -1,8 +1,29 @@
 <template>
   <div class="video-games-index">
-    <div>
-      <input v-model="searchTerm"/>
+    <div class="row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">Add Video Game to Collection</h2>
+      </div>
+      <div class="col-2"/>
     </div>
+
+    <div class="row">
+      <form class="form-inline col">
+        <label class="mr-sm-3" for="inlineFormInputSearch">Search</label>
+        <input type="text" class="form-control mb-2 mr-sm-3 custom-input" id="inlineFormInputSearch" v-model="searchTerm">
+      </form>
+      <div class="col">
+        <div class="form-group btn-v-button-group">
+          <span class="float-right">
+            <span class="btn-v-box">
+              <router-link to="/video_games/new" class="btn-v btn-v-brand">Add Video Game</router-link>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -15,24 +36,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
-          <router-link :to="'/video_games/' + videoGame.id"><th scope="row">{{ videoGame.title }}</th></router-link>
+        <tr class="table-v-light-2" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
+          <th scope="row"><router-link :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
           <td>{{ videoGame.formatted.platform }}</td>
           <td>{{ videoGame.formatted.rating_category }}</td>
           <td>{{ videoGame.formatted.online }}</td>
           <td>{{ videoGame.release_year }}</td>
           <td>
-            <button class="btn btn-info btn-sm" @click="createCartridge(videoGame)">
+            <button class="btn btn-v-brand btn-sm" @click="createCartridge(videoGame)">
               Add
             </button>
           </td>
         </tr>
       </tbody>
     </table>
-
-    <div>
-      <router-link to="/video_games/new" class="btn btn-primary">Add Video Game</router-link>
-    </div>
   </div>
 </template>
 

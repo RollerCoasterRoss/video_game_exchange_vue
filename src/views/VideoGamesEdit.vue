@@ -1,49 +1,67 @@
 <template>
   <div class="video-games-edit">
     <form v-on:submit.prevent="updateVideoGame()">
-      <h1>Edit Video Game</h1>
-
-      <ul>
-        <li v-for="error in errors">{{ error }}</li>
-      </ul>
-
-      <div>
-        <label>Edit Title:</label>
-        <input type="text" v-model="video_game.title">
+      <div class="row my-5">
+        <div class="col-2"/>
+        <div class="col-8 underline-header">
+          <h2 class="text-center">Edit Video Game</h2>
+        </div>
+        <div class="col-2"/>
       </div>
 
-      <div>
-        <label>Edit Game Platform:</label>
-        <select v-model="video_game.platform">
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" v-model="video_game.title">
+      </div>
+
+      <div class="form-group">
+        <label>Game Platform</label>
+        <select class="form-control custom-select" v-model="video_game.platform">
           <option v-for="platform_option in platform_options" :value="platform_option.value">
             {{ platform_option.display }}
           </option>
         </select>
       </div>
 
-      <div>
-        <label>Edit Rating:</label>
-        <select v-model="video_game.rating_category">
+      <div class="form-group">
+        <label>Rating</label>
+        <select class="form-control custom-select" v-model="video_game.rating_category">
           <option v-for="rating_option in rating_options" :value="rating_option.value">
             {{ rating_option.display }}
           </option>
         </select>
       </div>
 
-      <div>
-        <label>Edit Online Capabilities:</label>
-        <input type="radio" v-model="video_game.online" id="userChoice1" value="true">
-        <label for="userChoice1">Yes</label>
-        <input type="radio" v-model="video_game.online" id="userChoice2" value="false">
-        <label for="userChoice2">No</label>
+      <div class="form-group">
+        <label>Online Capabilities</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label mr-sm-2" for="userChoice1">Yes</label>
+            <input class="form-check-input" type="radio" v-model="video_game.online" id="userChoice1" value="true">
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label mr-sm-2" for="userChoice2">No</label>
+            <input class="form-check-input" type="radio" v-model="video_game.online"  id="userChoice2" value="false">
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label>Edit Release Year:</label>
-        <input type="number" v-model="video_game.release_year">
+      <div class="form-group">
+        <label>Release Year</label>
+        <input type="number" class="form-control" v-model="video_game.release_year">
       </div>
 
-      <input type="submit" value="Submit Changes">
+      <div class="form-group btn-v-button-group">
+        <span class="float-right">
+          <span class="btn-v-box">
+            <input type="submit" class="btn-v btn-v-brand" value="Submit Changes">
+          </span>
+        </span>
+      </div>
     </form>
   </div>
 </template>

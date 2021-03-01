@@ -1,7 +1,13 @@
 <template>
   <div class="signup">
     <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
+      <div class="row my-5">
+        <div class="col-2"/>
+        <div class="col-8 underline-header">
+          <h2 class="text-center">Sign Up</h2>
+        </div>
+        <div class="col-2"/>
+      </div>
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
@@ -56,7 +62,13 @@
         <input type="text" class="form-control" v-model="zipAddress">
       </div>
 
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <div class="form-group btn-v-button-group">
+        <span class="float-right">
+          <span class="btn-v-box">
+            <input type="submit" class="btn-v btn-v-brand" value="Submit">
+          </span>
+        </span>
+      </div>
     </form>
   </div>
 </template>

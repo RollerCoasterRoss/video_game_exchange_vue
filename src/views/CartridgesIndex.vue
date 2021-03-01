@@ -1,13 +1,37 @@
 <template>
   <div class="cartridges-index">
-    <div>
-      Search: <input v-model="searchTerm"/>
-      Platform: <select v-model="platformFilter">
-        <option v-for="platformOption in platformOptions" :value="platformOption.value">
-          {{ platformOption.display }}
-        </option>
-      </select>
+    <div class="row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">Borrow Cartridges</h2>
+      </div>
+      <div class="col-2"/>
     </div>
+
+    <div class="row">
+      <div class="col-auto"></div>
+      <form class="form-inline col-auto">
+        <label class="mr-sm-3" for="inlineFormInputSearch">Search</label>
+        <input type="text" class="form-control mb-2 mr-sm-3 custom-input" id="inlineFormInputSearch" v-model="searchTerm">
+
+        <label class="mr-sm-3" for="inlineFormDropdownPlatform">Platform</label>
+        <select class="form-control mb-2 mr-sm-3 custom-select custom-input" id="inlineFormDropdownPlatform" v-model="platformFilter">
+          <option v-for="platformOption in platformOptions" :value="platformOption.value">
+            {{ platformOption.display }}
+          </option>
+        </select>
+
+        <label class="mr-sm-3" for="inlineFormDropdownGenre">Genre</label>
+        <select class="form-control mb-2 mr-sm-2 custom-select custom-input" id="inlineFormDropdownGenre" v-model="genreFilter">
+          <option value="">Unspecified</option>
+          <option v-for="genre in genres">
+            {{ genre.name }}
+          </option>
+        </select>
+      </form>
+      <div class="col-auto"></div>
+    </div>
+
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -21,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
+        <tr class="table-v-light-2" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
           <th scope="row">{{ cartridge.video_game.title }}</th>
           <td>{{ cartridge.video_game.formatted.platform }}</td>
           <td>{{ cartridge.video_game.formatted.rating_category }}</td>
@@ -29,7 +53,7 @@
           <td>{{ cartridge.video_game.release_year }}</td>
           <td>{{ cartridge.owner_name }}</td>
           <td>
-            <button class="btn btn-info btn-sm" @click="borrowCartridge(cartridge)">
+            <button class="btn btn-v-brand btn-sm" @click="borrowCartridge(cartridge)">
               Borrow
             </button>
           </td>
@@ -72,6 +96,8 @@
           {value: "ps4", display: "Sony Playstation 4"},
           {value: "xbox_one", display: "Microsoft XBox One"},
         ],
+        genreFilter: "",
+        genres: []
       };
     },
     created: function() {
@@ -79,6 +105,12 @@
         .get("/api/cartridges")
         .then(response => {
           this.cartridges = response.data;
+        });
+
+      axios
+        .get("/api/genres")
+        .then(response => {
+          this.genres = response.data;
         });
     },
     methods: {
@@ -94,6 +126,21 @@
           });
       }
     },
-    mixins: [Vue2Filters.mixin]
+    mixins: [Vue2Filters.mixin],
+    watch: {
+      genreFilter: function(newGenreName) {
+        var url = "/api/cartridges";
+
+        if (newGenreName) {
+          url += `?genre=${newGenreName}`
+        }
+
+        axios
+          .get(url)
+          .then(response => {
+            this.cartridges = response.data;
+          });
+      }
+    }
   };
 </script>

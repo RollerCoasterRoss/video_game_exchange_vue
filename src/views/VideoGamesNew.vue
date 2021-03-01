@@ -1,49 +1,67 @@
 <template>
   <div class="video-games-new">
     <form v-on:submit.prevent="createVideoGame()">
-      <h1>Create New Video Game</h1>
-
-      <ul>
-        <li v-for="error in errors">{{ error }}</li>
-      </ul>
-
-      <div>
-        <label>Title: </label>
-        <input type="text" v-model="title">
+      <div class="row my-5">
+        <div class="col-2"/>
+        <div class="col-8 underline-header">
+          <h2 class="text-center">Create New Video Game</h2>
+        </div>
+        <div class="col-2"/>
       </div>
 
-      <div>
-        <label>Game Platform: </label>
-        <select v-model="platform">
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" v-model="title">
+      </div>
+
+      <div class="form-group">
+        <label>Game Platform</label>
+        <select class="form-control mb-2 mr-sm-3 custom-select standard-select" v-model="platform">
           <option v-for="platform in platforms" :value="platform.value">
             {{ platform.display }}
           </option>
         </select>
       </div>
 
-      <div>
-        <label>Rating: </label>
-        <select v-model="rating_category">
+      <div class="form-group">
+        <label>Rating</label>
+        <select class="form-control mb-2 mr-sm-3 custom-select standard-select" v-model="rating_category">
           <option v-for="rating in ratings" :value="rating.value">
             {{ rating.display }}
           </option>
         </select>
       </div>
 
-      <div>
-        <label>Online Capabilities?: </label>
-        <input type="radio" v-model="online" id="userChoice1" value="true">
-        <label for="userChoice1">Yes</label>
-        <input type="radio" v-model="online" id="userChoice2" value="false">
-        <label for="userChoice2">No</label>
+      <div class="form-group">
+        <label>Online Capabilities</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label mr-sm-2" for="userChoice1">Yes</label>
+            <input class="form-check-input" type="radio" v-model="online" id="userChoice1" value="true">
+          </div>
+          <div class="form-check form-check-inline">
+            <label class="form-check-label mr-sm-2" for="userChoice2">No</label>
+            <input class="form-check-input" type="radio" v-model="online"  id="userChoice2" value="false">
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label>Release Year: </label>
-        <input type="number" v-model="release_year">
+      <div class="form-group">
+        <label>Release Year</label>
+        <input type="number" class="form-control" v-model="release_year" placeholder="example: 1986">
       </div>
 
-      <input type="submit" value="Create">
+      <div class="form-group btn-v-button-group">
+        <span class="float-right">
+          <span class="btn-v-box">
+            <input type="submit" class="btn-v btn-v-brand" value="Create">
+          </span>
+        </span>
+      </div>
     </form>
   </div>
 </template>
@@ -62,7 +80,7 @@ export default {
       platform: "",
       rating_category: "",
       online: "",
-      release_year: "",
+      release_year: "1986",
       platforms: [
         {value: "nes", display: "Nintendo Entertainment System"},
         {value: "super_nintendo", display: "Super Nintendo Entertainment System"},
