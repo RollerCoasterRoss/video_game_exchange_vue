@@ -53,7 +53,7 @@
           <td>{{ cartridge.video_game.release_year }}</td>
           <td>{{ cartridge.owner_name }}</td>
           <td>
-            <button class="btn btn-v-brand btn-sm" @click="borrowCartridge(cartridge)">
+            <button class="btn-v btn-v-brand btn-v-no-decoration btn-sm" @click="borrowCartridge(cartridge)">
               Borrow
             </button>
           </td>

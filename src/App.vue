@@ -64,6 +64,9 @@
     --vge-info-lt: #7BC6C6;
     --vge-danger: #890000;
     --vge-danger-lt: #FF9E9E;
+    --vge-profile-1: #7FB808;
+    --vge-profile-2: #FB4233; 
+    --vge-profile-3: #6974C5;
   }
 
   body {
@@ -74,7 +77,7 @@
 
   footer {
     min-height: 250px;
-    background-color: black;
+    background-color: var(--vge-dark-2);
   }
 
   table {
@@ -88,6 +91,12 @@
 
   .custom-container {
     min-height: 620px;
+  }
+
+  a:link.btn-v-no-decoration, a:visited.btn-v-no-decoration, a:hover.btn-v-no-decoration {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
   }
 
   .btn-v {
@@ -107,14 +116,6 @@
       line-height: 1.5;
       border-radius: 1.2rem;
       transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-  }
-
-  .btn-v a { /*fix later*/
-    text-decoration: none;
-  }
-
-  .btn-v a:hover { /*fix later*/
-    text-decoration: none;
   }
 
   .btn-v-box {
@@ -174,6 +175,18 @@
 
   .bg-v-light-1 {
     background-color: var(--vge-light-1);
+  }
+
+  .bg-v-profile-1 {
+    background-color: var(--vge-profile-1);
+  }
+
+  .bg-v-profile-2 {
+    background-color: var(--vge-profile-2);
+  }
+
+  .bg-v-profile-3 {
+    background-color: var(--vge-profile-3);
   }
 
   .bg-v-black {
@@ -255,6 +268,7 @@
   }
 
   .table-v-light-2 {
+    color: black;
     background-color: var(--vge-light-2);
   }
 

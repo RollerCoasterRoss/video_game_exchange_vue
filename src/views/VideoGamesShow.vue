@@ -8,14 +8,6 @@
       <div class="col-2"/>
     </div>
 
-    <div class="form-group btn-v-button-group my-5">
-      <span class="align-center">
-        <span class="btn-v-box">
-          <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridges to Collection</router-link>
-        </span>
-      </span>
-    </div>
-
     <div class="jumbotron bg-v-dark-2 py-4">
       <h1 class="display-4">{{ video_game.title }}</h1>
       <p class="lead">Initial Release Year: {{ video_game.release_year }}</p>
@@ -32,6 +24,14 @@
       </div>
     </div>
 
+    <div class="form-group btn-v-button-group my-4">
+      <span class="float-right">
+        <span class="btn-v-box">
+          <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridges to Collection</router-link>
+        </span>
+      </span>
+    </div>
+
     <div class="jumbotron bg-v-dark-2 py-4">
       <div class="row">
         <div class="col">
@@ -43,7 +43,7 @@
             <div class="col-2"/>
           </div>
           <ul>
-            <li v-for="video_game_genre in video_game.video_game_genres">{{ video_game_genre.genre.name }} <button class="btn btn-v-brand btn-sm" v-on:click="destroyVideoGameGenre(video_game_genre)">Delete</button></li>
+            <li v-for="video_game_genre in video_game.video_game_genres">{{ video_game_genre.genre.name }} <button class="btn-v-brand btn-v-no-decoration btn-sm" v-on:click="destroyVideoGameGenre(video_game_genre)">Delete</button></li>
           </ul>
         </div>
         <div class="col">

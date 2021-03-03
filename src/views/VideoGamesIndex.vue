@@ -17,7 +17,7 @@
         <div class="form-group btn-v-button-group">
           <span class="float-right">
             <span class="btn-v-box">
-              <router-link to="/video_games/new" class="btn-v btn-v-brand">Add Video Game</router-link>
+              <router-link to="/video_games/new" class="btn-v btn-v-brand btn-v-no-decoration">Add Video Game</router-link>
             </span>
           </span>
         </div>
@@ -37,13 +37,13 @@
       </thead>
       <tbody>
         <tr class="table-v-light-2" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
-          <th scope="row"><router-link :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
+          <th scope="row"><router-link class="btn-v-no-decoration" :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
           <td>{{ videoGame.formatted.platform }}</td>
           <td>{{ videoGame.formatted.rating_category }}</td>
           <td>{{ videoGame.formatted.online }}</td>
           <td>{{ videoGame.release_year }}</td>
           <td>
-            <button class="btn btn-v-brand btn-sm" @click="createCartridge(videoGame)">
+            <button class="btn-v btn-v-brand btn-v-no-decoration btn-sm" @click="createCartridge(videoGame)">
               Add
             </button>
           </td>

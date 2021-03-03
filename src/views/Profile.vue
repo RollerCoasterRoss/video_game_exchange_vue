@@ -18,10 +18,10 @@
       <div class="form-group btn-v-button-group">
         <span class="float-right">
           <span class="btn-v-box">
-            <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
+            <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand btn-v-no-decoration">Edit</router-link>
           </span>
           <span class="btn-v-box">
-            <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
+            <router-link to="/video_games" class="btn-v btn-v-brand btn-v-no-decoration">Add Cartridge to Collection</router-link>
           </span>
         </span>
       </div>
@@ -50,14 +50,14 @@
         <tbody>
           <tr 
             v-for="cartridge in orderBy(cartridges, 'video_game.title')"
-            :class="{'bg-v-success-lt': cartridge.owned_and_playable, 'bg-v-danger-lt': cartridge.borrowed_from_me, 'bg-v-info-lt': cartridge.borrowed_by_me}"
+            :class="{'bg-v-profile-1': cartridge.owned_and_playable, 'bg-v-profile-2': cartridge.borrowed_from_me, 'bg-v-profile-3': cartridge.borrowed_by_me}"
           >
             <th scope="row">{{ cartridge.video_game.title }}</th>
             <td>{{ cartridge.video_game.formatted.platform }}</td>
             <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
             <td>{{ cartridge.borrower_name }}</td>
             <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
-            <td><button v-if="cartridge.borrowed_by_me" class="btn btn-v-dark-1 btn-sm" @click="returnCartridge(cartridge.id)">Return</button></td>
+            <td><button v-if="cartridge.borrowed_by_me" class="btn-v btn-v-dark-1 btn-v-no-decoration btn-sm" @click="returnCartridge(cartridge.id)">Return</button></td>
           </tr>
         </tbody>
       </table>
