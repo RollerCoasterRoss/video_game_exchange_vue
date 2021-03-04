@@ -119,6 +119,11 @@ export default {
       .get("/api/video_games/" + this.$route.params.id)
       .then(response => {
         this.video_game = response.data;
+      })
+      .catch(error => {
+        if(error.response.status === 401) {
+          this.$router.push("/logout");
+        }
       });
   },
   methods: {

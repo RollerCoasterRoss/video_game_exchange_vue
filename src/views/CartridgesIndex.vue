@@ -46,14 +46,14 @@
       </thead>
       <tbody>
         <tr class="table-v-light-2" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
-          <th scope="row">{{ cartridge.video_game.title }}</th>
+          <th class="font-weight-normal" scope="row">{{ cartridge.video_game.title }}</th>
           <td>{{ cartridge.video_game.formatted.platform }}</td>
           <td>{{ cartridge.video_game.formatted.rating_category }}</td>
           <td>{{ cartridge.video_game.formatted.online }}</td>
           <td>{{ cartridge.video_game.release_year }}</td>
           <td>{{ cartridge.owner_name }}</td>
           <td>
-            <button class="btn-v btn-v-brand btn-v-no-decoration btn-sm" @click="borrowCartridge(cartridge)">
+            <button class="btn-v btn-v-brand btn-sm" @click="borrowCartridge(cartridge)">
               Borrow
             </button>
           </td>
@@ -105,12 +105,22 @@
         .get("/api/cartridges")
         .then(response => {
           this.cartridges = response.data;
+        })
+        .catch(error => {
+          if(error.response.status === 401) {
+            this.$router.push("/logout");
+          }
         });
 
       axios
         .get("/api/genres")
         .then(response => {
           this.genres = response.data;
+        })
+        .catch(error => {
+          if(error.response.status === 401) {
+            this.$router.push("/logout");
+          }
         });
     },
     methods: {

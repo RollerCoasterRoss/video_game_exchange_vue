@@ -60,6 +60,13 @@
         </div>
         <div class="col-2"/>
       </div>
+
+      <div class="text-center mb-3">
+        <span class="btn-v-box">
+          <router-link to="/video_games" class="btn-v btn-v-brand">Add Game to Collection</router-link>
+        </span>
+      </div>
+
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -73,16 +80,15 @@
         </thead>
         <tbody>
           <tr 
-            v-for="cartridge in cartridges" 
-            class="table-v-light-2"
-            :class="{'bg-v-success-lt': cartridge.owned_and_playable, 'bg-v-danger-lt': cartridge.borrowed_from_me, 'bg-v-info-lt': cartridge.borrowed_by_me}"
+            v-for="cartridge in cartridges"
+            :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
           >
             <th scope="row">{{ cartridge.video_game.title }}</th>
             <td>{{ cartridge.video_game.formatted.platform }}</td>
             <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
             <td>{{ cartridge.borrower_name }}</td>
             <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
-            <td><button v-if="cartridge.owned_and_playable" class="btn btn-v-brand btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
+            <td><button v-if="cartridge.owned_and_playable" class="btn-v btn-v-brand btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
           </tr>
         </tbody>
       </table>
@@ -118,12 +124,22 @@
         .get("/api/users/" + this.$route.params.id)
         .then(response => {
           this.user = response.data;
+        })
+        .catch(error => {
+          if(error.response.status === 401) {
+            this.$router.push("/logout");
+          }
         });
 
       axios
         .get("/api/cartridges/owned")
         .then(response => {
           this.cartridges = response.data;
+        })
+        .catch(error => {
+          if(error.response.status === 401) {
+            this.$router.push("/logout");
+          }
         });
     },
     methods: {

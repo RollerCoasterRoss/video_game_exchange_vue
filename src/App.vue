@@ -64,9 +64,9 @@
     --vge-info-lt: #7BC6C6;
     --vge-danger: #890000;
     --vge-danger-lt: #FF9E9E;
-    --vge-profile-1: #7FB808;
-    --vge-profile-2: #FB4233; 
-    --vge-profile-3: #6974C5;
+    --vge-table-1: #7FB808;
+    --vge-table-2: #FB4233; 
+    --vge-table-3: #6974C5;
   }
 
   body {
@@ -89,14 +89,20 @@
     transform: scale(1.5);
   }
 
-  .custom-container {
-    min-height: 620px;
-  }
-
-  a:link.btn-v-no-decoration, a:visited.btn-v-no-decoration, a:hover.btn-v-no-decoration {
+  a.btn-v, a:link.btn-v, a:visited.btn-v, a:hover.btn-v {
     color: inherit;
     text-decoration: none;
     font-weight: normal;
+  }
+
+  a.link-v-no-style, a:link.link-v-no-style, a:visited.link-v-no-style, a:hover.link-v-no-style {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  .custom-container {
+    min-height: 620px;
   }
 
   .btn-v {
@@ -175,18 +181,6 @@
 
   .bg-v-light-1 {
     background-color: var(--vge-light-1);
-  }
-
-  .bg-v-profile-1 {
-    background-color: var(--vge-profile-1);
-  }
-
-  .bg-v-profile-2 {
-    background-color: var(--vge-profile-2);
-  }
-
-  .bg-v-profile-3 {
-    background-color: var(--vge-profile-3);
   }
 
   .bg-v-black {
@@ -270,6 +264,18 @@
   .table-v-light-2 {
     color: black;
     background-color: var(--vge-light-2);
+  }
+
+  .table-v-bg-1 {
+    background-color: var(--vge-table-1);
+  }
+
+  .table-v-bg-2 {
+    background-color: var(--vge-table-2);
+  }
+
+  .table-v-bg-3 {
+    background-color: var(--vge-table-3);
   }
 
   .vge-logged-in-line h5 {

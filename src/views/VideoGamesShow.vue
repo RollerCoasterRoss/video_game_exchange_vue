@@ -43,7 +43,7 @@
             <div class="col-2"/>
           </div>
           <ul>
-            <li v-for="video_game_genre in video_game.video_game_genres">{{ video_game_genre.genre.name }} <button class="btn-v-brand btn-v-no-decoration btn-sm" v-on:click="destroyVideoGameGenre(video_game_genre)">Delete</button></li>
+            <li class="my-1" v-for="video_game_genre in video_game.video_game_genres">{{ video_game_genre.genre.name }} <button class="btn-v btn-v-brand btn-sm" v-on:click="destroyVideoGameGenre(video_game_genre)">Delete</button></li>
           </ul>
         </div>
         <div class="col">
@@ -105,11 +105,22 @@ export default {
       .get("/api/video_games/" + this.$route.params.id)
       .then(response => {
         this.video_game = response.data;
+      })
+      .catch(error => {
+        if(error.response.status === 401) {
+          this.$router.push("/logout");
+        }
       });
+
     axios
       .get("/api/genres")
       .then(response => {
         this.genres = response.data;
+      })
+      .catch(error => {
+        if(error.response.status === 401) {
+          this.$router.push("/logout");
+        }
       });
   },
   methods: {
