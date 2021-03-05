@@ -27,6 +27,18 @@
       </div>
     </div>
 
+    <div class="row my-2 mx-1">
+      <div class="col-4 profile-img">
+        <img src="../../public/img/donkey_kong.png" alt="Error Loading Image">
+      </div>
+      <div class="col-4 profile-img">
+        <img src="../../public/img/frogger.png" alt="Error Loading Image">
+      </div>
+      <div class="col-4 profile-img">
+        <img src="../../public/img/pacman.png" alt="Error Loading Image">
+      </div>
+    </div>
+
     <div>
       <div class="row my-5">
         <div class="col-2"/>

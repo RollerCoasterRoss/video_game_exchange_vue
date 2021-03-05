@@ -278,6 +278,15 @@
     background-color: var(--vge-table-3);
   }
 
+  .profile-img {
+    padding: 0;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+  }
+
   .vge-logged-in-line h5 {
     padding-top: 3px;
     padding-bottom: 3px;
