@@ -34,7 +34,7 @@
 
     <table class="table">
       <thead class="thead-dark">
-        <tr>
+        <tr class="text-center">
           <th scope="col">Title</th>
           <th scope="col">Platform</th>
           <th scope="col">Rating</th>
@@ -45,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="table-v-light-2" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
+        <tr class="table-v-light-2 text-center" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
           <th class="font-weight-normal" scope="row">{{ cartridge.video_game.title }}</th>
           <td>{{ cartridge.video_game.formatted.platform }}</td>
           <td>{{ cartridge.video_game.formatted.rating_category }}</td>

@@ -92,11 +92,16 @@
   a.btn-v, a:link.btn-v, a:visited.btn-v, a:hover.btn-v {
     color: inherit;
     text-decoration: none;
+  }
+
+  a.link-v-no-style, a:link.link-v-no-style, a:visited.link-v-no-style {
+    color: inherit;
+    text-decoration: none;
     font-weight: normal;
   }
 
-  a.link-v-no-style, a:link.link-v-no-style, a:visited.link-v-no-style, a:hover.link-v-no-style {
-    color: inherit;
+  a:hover.link-v-no-style {
+    color: var(--vge-brand);
     text-decoration: none;
     font-weight: normal;
   }
@@ -278,13 +283,10 @@
     background-color: var(--vge-table-3);
   }
 
-  .profile-img {
-    padding: 0;
-  }
-
-  .profile-img img {
-    width: 100%;
-    height: 100%;
+  .img-v-custom {
+    min-width: 100%;
+    max-height: 8rem;
+    object-fit: fill;
   }
 
   .vge-logged-in-line h5 {
@@ -325,6 +327,6 @@
       if(email) {
         this.userEmail = email;
       }
-    }
+    },
   }
 </script>

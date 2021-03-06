@@ -69,7 +69,7 @@
 
       <table class="table">
         <thead class="thead-dark">
-          <tr>
+          <tr class="text-center">
             <th scope="col">Title</th>
             <th scope="col">Platform</th>
             <th scope="col">Available</th>
@@ -81,6 +81,7 @@
         <tbody>
           <tr 
             v-for="cartridge in cartridges"
+            class="text-center"
             :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
           >
             <th scope="row">{{ cartridge.video_game.title }}</th>
@@ -88,7 +89,7 @@
             <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
             <td>{{ cartridge.borrower_name }}</td>
             <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
-            <td><button v-if="cartridge.owned_and_playable" class="btn-v btn-v-brand btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
+            <td><button v-if="cartridge.owned_and_playable" class="btn-v btn-v-dark-1 btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
           </tr>
         </tbody>
       </table>

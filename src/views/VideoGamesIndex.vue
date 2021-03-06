@@ -26,7 +26,7 @@
 
     <table class="table">
       <thead class="thead-dark">
-        <tr>
+        <tr class="text-center">
           <th scope="col">Title</th>
           <th scope="col">Platform</th>
           <th scope="col">Rating</th>
@@ -36,7 +36,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="table-v-light-2" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
+        <tr class="table-v-light-2 text-center" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
           <th scope="row"><router-link class="link-v-no-style" :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
           <td>{{ videoGame.formatted.platform }}</td>
           <td>{{ videoGame.formatted.rating_category }}</td>

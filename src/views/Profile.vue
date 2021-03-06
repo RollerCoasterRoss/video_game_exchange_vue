@@ -27,16 +27,8 @@
       </div>
     </div>
 
-    <div class="row my-2 mx-1">
-      <div class="col-4 profile-img">
-        <img src="../../public/img/donkey_kong.png" alt="Error Loading Image">
-      </div>
-      <div class="col-4 profile-img">
-        <img src="../../public/img/frogger.png" alt="Error Loading Image">
-      </div>
-      <div class="col-4 profile-img">
-        <img src="../../public/img/pacman.png" alt="Error Loading Image">
-      </div>
+    <div>
+      <img class="img-v-custom" src="/img/donkey_kong_level_1.png" alt="DK Middle">
     </div>
 
     <div>
@@ -50,7 +42,7 @@
 
       <table class="table">
         <thead class="thead-v-dark">
-          <tr>
+          <tr class="text-center">
             <th scope="col">Title</th>
             <th scope="col">Platform</th>
             <th scope="col">Available</th>
@@ -62,6 +54,7 @@
         <tbody>
           <tr 
             v-for="cartridge in orderBy(cartridges, 'video_game.title')"
+            class="text-center"
             :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
           >
             <th scope="row">{{ cartridge.video_game.title }}</th>
@@ -74,6 +67,11 @@
         </tbody>
       </table>
     </div>
+
+    <div>
+      <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
+    </div>
+
   </div>
 </template>
 
@@ -147,6 +145,9 @@
       cartridges: function() {
         return this.borrowed_cartridges.concat(this.owned_cartridges);
       }
+    },
+    mounted: function() {
+      
     },
     mixins: [Vue2Filters.mixin]
   };
