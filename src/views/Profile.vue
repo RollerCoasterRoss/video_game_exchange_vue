@@ -40,7 +40,7 @@
         <div class="col-2"/>
       </div>
 
-      <table class="table">
+      <table class="table mb-5">
         <thead class="thead-v-dark">
           <tr class="text-center">
             <th scope="col">Title</th>

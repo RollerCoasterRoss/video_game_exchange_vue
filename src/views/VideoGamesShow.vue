@@ -70,6 +70,11 @@
         </div>
       </div>
     </div>
+
+    <div>
+      <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
+    </div>
+
   </div>
 </template>
 

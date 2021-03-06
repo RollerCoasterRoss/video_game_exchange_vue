@@ -32,7 +32,7 @@
       <div class="col-auto"></div>
     </div>
 
-    <table class="table">
+    <table class="table mb-5">
       <thead class="thead-dark">
         <tr class="text-center">
           <th scope="col">Title</th>
@@ -60,6 +60,11 @@
         </tr>
       </tbody>
     </table>
+
+    <div>
+      <img class="img-v-custom" src="/img/frogger_2.png" alt="Frogger Bottom">
+    </div>
+
   </div>
 </template>
 

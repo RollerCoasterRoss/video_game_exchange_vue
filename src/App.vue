@@ -285,7 +285,7 @@
 
   .img-v-custom {
     min-width: 100%;
-    max-height: 8rem;
+    max-height: 7.5rem;
     object-fit: fill;
   }
 

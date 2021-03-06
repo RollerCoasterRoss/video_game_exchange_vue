@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <table class="table">
+    <table class="table mb-5">
       <thead class="thead-dark">
         <tr class="text-center">
           <th scope="col">Title</th>
@@ -50,6 +50,11 @@
         </tr>
       </tbody>
     </table>
+
+    <div>
+      <img class="img-v-custom" src="/img/donkey_kong_level_2.png" alt="DK Bottom">
+    </div>
+
   </div>
 </template>
 

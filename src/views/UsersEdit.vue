@@ -53,6 +53,10 @@
     </form>
 
     <div>
+      <img class="img-v-custom" src="/img/frogger_3.png" alt="Frogger Middle">
+    </div>
+
+    <div>
       <div class="row my-5">
         <div class="col-2"/>
         <div class="col-8 underline-header">
@@ -67,7 +71,7 @@
         </span>
       </div>
 
-      <table class="table">
+      <table class="table mb-5">
         <thead class="thead-dark">
           <tr class="text-center">
             <th scope="col">Title</th>
@@ -93,6 +97,10 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div>
+      <img class="img-v-custom" src="/img/frogger_4.png" alt="Frogger Bottom">
     </div>
 
   </div>
