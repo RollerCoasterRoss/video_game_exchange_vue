@@ -1,5 +1,5 @@
 <template>
-  <div class="cartridges-index">
+  <div class="cartridges-index"">
     <div class="row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
@@ -61,9 +61,9 @@
       </tbody>
     </table>
 
-    <div>
+<!--     <div>
       <img class="img-v-custom" src="/img/frogger_2.png" alt="Frogger Bottom">
-    </div>
+    </div> -->
 
   </div>
 </template>

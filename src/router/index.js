@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueRellax from 'vue-rellax';
 
 import Profile from '../views/Profile.vue';
 
@@ -17,6 +18,7 @@ import VideoGamesEdit from '../views/VideoGamesEdit.vue';
 import CartridgesIndex from '../views/CartridgesIndex.vue';
 
 Vue.use(VueRouter);
+Vue.use(VueRellax);
 
 const routes = [
   { path: '/', name: 'home', component: Profile },

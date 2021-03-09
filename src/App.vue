@@ -40,13 +40,17 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div class="container my-4 custom-container">
-        <router-view/>
+    <div class="container custom-container">
+      <router-view/>
     </div>
 
-    <footer>
-      
+    <footer class="container-fluid">
+      <h5 class="text-center my-1">This is test line 1</h5>
+      <h5 class="text-center my-1">This is test line 2</h5>
+      <h5 class="text-center my-1">This is test line 3</h5>
+      <h5 class="text-center my-1">This is test line 4</h5>
     </footer>
+
   </div>
 </template>
 
@@ -72,11 +76,16 @@
   body {
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
-    background-color: var(--vge-dark-1);
+    background: url("/img/mario_bg_1.png") var(--vge-dark-1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
   }
 
   footer {
-    min-height: 250px;
+    position: relative;
+    height: 200px;
+    bottom: 0;
     background-color: var(--vge-dark-2);
   }
 
@@ -107,7 +116,7 @@
   }
 
   .custom-container {
-    min-height: 620px;
+    margin-bottom: 250px;
   }
 
   .btn-v {
@@ -255,6 +264,14 @@
   .bg-v-danger-lt {
     background-color: var(--vge-danger-lt);
   }
+
+/*  .bg-v-image {
+    margin: 0;
+    padding: 0;
+    background: url("/img/donkey_kong.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }*/
 
   .table .thead-v-dark th {
     color: white;

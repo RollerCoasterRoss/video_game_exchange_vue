@@ -1,5 +1,5 @@
 <template>
-  <div class="profile">
+  <div class="profile" v-rellax="{speed: -5}">
     <div class="row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
@@ -27,9 +27,9 @@
       </div>
     </div>
 
-    <div>
-      <img class="img-v-custom" src="/img/donkey_kong_level_1.png" alt="DK Middle">
-    </div>
+<!--       <div>
+        <img class="img-v-custom" src="/img/donkey_kong_level_1.png" alt="DK Middle">
+      </div> -->
 
     <div>
       <div class="row my-5">
@@ -68,9 +68,9 @@
       </table>
     </div>
 
-    <div>
-      <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
-    </div>
+<!--       <div>
+        <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
+      </div> -->
 
   </div>
 </template>
@@ -145,9 +145,6 @@
       cartridges: function() {
         return this.borrowed_cartridges.concat(this.owned_cartridges);
       }
-    },
-    mounted: function() {
-      
     },
     mixins: [Vue2Filters.mixin]
   };
