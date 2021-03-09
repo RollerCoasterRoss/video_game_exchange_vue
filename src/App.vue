@@ -42,6 +42,9 @@
 
     <div class="container custom-container">
       <router-view/>
+      <div class="spacer">
+        
+      </div>
     </div>
 
     <footer class="container-fluid">
@@ -117,6 +120,13 @@
 
   .custom-container {
     margin-bottom: 250px;
+  }
+
+  .title-container {
+    margin: 0 auto;
+    padding: 20px 0;
+    border: 1px solid white;
+    background-color: var(--vge-dark-2);
   }
 
   .btn-v {
@@ -265,14 +275,6 @@
     background-color: var(--vge-danger-lt);
   }
 
-/*  .bg-v-image {
-    margin: 0;
-    padding: 0;
-    background: url("/img/donkey_kong.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }*/
-
   .table .thead-v-dark th {
     color: white;
     background-color: black;
@@ -300,11 +302,11 @@
     background-color: var(--vge-table-3);
   }
 
-  .img-v-custom {
+/*  .img-v-custom {
     min-width: 100%;
     max-height: 7.5rem;
     object-fit: fill;
-  }
+  }*/
 
   .vge-logged-in-line h5 {
     padding-top: 3px;
@@ -317,6 +319,10 @@
 
   .underline-header {
     border-bottom: 2px solid var(--vge-light-1);
+  }
+
+  .spacer {
+    height: 350px;
   }
 </style>
 

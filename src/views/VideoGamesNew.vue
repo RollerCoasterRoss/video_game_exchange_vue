@@ -1,14 +1,14 @@
 <template>
   <div class="video-games-new">
-    <form v-on:submit.prevent="createVideoGame()">
-      <div class="row my-5">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">Create New Video Game</h2>
-        </div>
-        <div class="col-2"/>
+    <div class="title-container row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">Create New Video Game</h2>
       </div>
+      <div class="col-2"/>
+    </div>
 
+    <form v-on:submit.prevent="createVideoGame()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>

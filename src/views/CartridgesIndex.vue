@@ -1,6 +1,6 @@
 <template>
-  <div class="cartridges-index"">
-    <div class="row my-5">
+  <div class="cartridges-index" v-rellax="{speed: -5}">
+    <div class="title-container row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
         <h2 class="text-center">Borrow Cartridges</h2>
@@ -60,10 +60,6 @@
         </tr>
       </tbody>
     </table>
-
-<!--     <div>
-      <img class="img-v-custom" src="/img/frogger_2.png" alt="Frogger Bottom">
-    </div> -->
 
   </div>
 </template>

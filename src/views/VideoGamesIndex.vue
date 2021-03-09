@@ -1,13 +1,13 @@
 <template>
-  <div class="video-games-index">
-    <div class="row my-5">
+  <div class="video-games-index" v-rellax="{speed: -5}">
+    <div class="title-container row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
         <h2 class="text-center">Add Video Game to Collection</h2>
       </div>
       <div class="col-2"/>
     </div>
-
+    
     <div class="row">
       <form class="form-inline col">
         <label class="mr-sm-3" for="inlineFormInputSearch">Search</label>
@@ -50,10 +50,6 @@
         </tr>
       </tbody>
     </table>
-
-    <div>
-      <img class="img-v-custom" src="/img/donkey_kong_level_2.png" alt="DK Bottom">
-    </div>
 
   </div>
 </template>

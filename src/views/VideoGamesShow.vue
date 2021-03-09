@@ -1,6 +1,6 @@
 <template>
-  <div class="video-games-show">
-    <div class="row my-5">
+  <div class="video-games-show" v-rellax="{speed: -5}">
+    <div class="title-container row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
         <h2 class="text-center">Video Game Info</h2>
@@ -69,10 +69,6 @@
           </form>
         </div>
       </div>
-    </div>
-
-    <div>
-      <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
     </div>
 
   </div>

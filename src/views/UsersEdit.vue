@@ -1,14 +1,14 @@
 <template>
-  <div class="users-edit">
-    <form v-on:submit.prevent="updateUser()">
-      <div class="row my-5">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">Edit My Info</h2>
-        </div>
-        <div class="col-2"/>
+  <div class="users-edit" v-rellax="{speed: -5}">
+    <div class="title-container row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">Edit My Info</h2>
       </div>
+      <div class="col-2"/>
+    </div>
 
+    <form v-on:submit.prevent="updateUser()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
@@ -52,19 +52,15 @@
     </div>
     </form>
 
-    <div>
-      <img class="img-v-custom" src="/img/frogger_3.png" alt="Frogger Middle">
+    <div class="title-container row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">My Cartridges</h2>
+      </div>
+      <div class="col-2"/>
     </div>
 
     <div>
-      <div class="row my-5">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">My Cartridges</h2>
-        </div>
-        <div class="col-2"/>
-      </div>
-
       <div class="text-center mb-3">
         <span class="btn-v-box">
           <router-link to="/video_games" class="btn-v btn-v-brand">Add Game to Collection</router-link>
@@ -97,10 +93,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div>
-      <img class="img-v-custom" src="/img/frogger_4.png" alt="Frogger Bottom">
     </div>
 
   </div>

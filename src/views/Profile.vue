@@ -1,6 +1,6 @@
 <template>
   <div class="profile" v-rellax="{speed: -5}">
-    <div class="row my-5">
+    <div class="title-container row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">
         <h2 class="text-center">Pro<span style="letter-spacing: 1px">fi</span>le</h2>
@@ -27,19 +27,15 @@
       </div>
     </div>
 
-<!--       <div>
-        <img class="img-v-custom" src="/img/donkey_kong_level_1.png" alt="DK Middle">
-      </div> -->
+    <div class="title-container row my-5">
+      <div class="col-2"/>
+      <div class="col-8 underline-header">
+        <h2 class="text-center">My Collection</h2>
+      </div>
+      <div class="col-2"/>
+    </div>
 
     <div>
-      <div class="row my-5">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">My Collection</h2>
-        </div>
-        <div class="col-2"/>
-      </div>
-
       <table class="table mb-5">
         <thead class="thead-v-dark">
           <tr class="text-center">
@@ -67,10 +63,6 @@
         </tbody>
       </table>
     </div>
-
-<!--       <div>
-        <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
-      </div> -->
 
   </div>
 </template>
