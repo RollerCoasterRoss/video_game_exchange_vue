@@ -40,11 +40,13 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div id="custom-container-unique" class="custom-container" v-rellax="{speed: -5}">
+    <div id="custom-container-unique" class="container" @scroll="parallaxMarginAdder()" v-rellax="{speed: -5}">
       <router-view/>
     </div>
 
     <footer class="container-fluid">
+      <h5 class="text-center">This is a test line</h5>
+      <h5 class="text-center">This is a test line</h5>
       <h5 class="text-center">This is a test line</h5>
     </footer>
 
@@ -76,11 +78,11 @@
     background: url("/img/mario_bg_1.png") var(--vge-dark-1);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
   }
 
   footer {
-    padding: 50px 0;
+    min-height: 200px;
     background-color: var(--vge-dark-2);
   }
 
@@ -121,11 +123,6 @@
     margin: 20px 0;
     padding: 20px;
     background-color: var(--vge-dark-1);
-  }
-
-  .custom-container {
-    margin: 0 20%;
-    width: 60%;
   }
 
   .btn-v {
@@ -339,16 +336,21 @@
       if(email) {
         this.userEmail = email;
       }
-    },
-    mounted() {
-      this.parralaxMarginAdder();
+
+      window.addEventListener("scroll", this.parallaxMarginAdder);
     },
     methods: {
-      parralaxMarginAdder() {
+      parallaxMarginAdder() {
         var customElement = document.getElementById("custom-container-unique");
-          if (customElement.style.transform != "translate3d(0px,0px,0px)") {
-            customElement.style.marginBottom = "500px";
-          }
+        
+        const style = window.getComputedStyle(customElement);
+        const matrix = style.transform || style.webkitTransform || style.mozTransform;
+
+        const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
+        const matrixValue = matrixValues[5];
+        const yAxisValue = parseInt(matrixValue);
+
+        customElement.style.marginBottom = (yAxisValue + 10) + "px";
       }
     },
   }
