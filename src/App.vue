@@ -40,18 +40,12 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div class="container custom-container">
+    <div id="custom-container-unique" class="custom-container" v-rellax="{speed: -5}">
       <router-view/>
-      <div class="spacer">
-        
-      </div>
     </div>
 
     <footer class="container-fluid">
-      <h5 class="text-center my-1">This is test line 1</h5>
-      <h5 class="text-center my-1">This is test line 2</h5>
-      <h5 class="text-center my-1">This is test line 3</h5>
-      <h5 class="text-center my-1">This is test line 4</h5>
+      <h5 class="text-center">This is a test line</h5>
     </footer>
 
   </div>
@@ -86,9 +80,7 @@
   }
 
   footer {
-    position: relative;
-    height: 200px;
-    bottom: 0;
+    padding: 50px 0;
     background-color: var(--vge-dark-2);
   }
 
@@ -118,15 +110,22 @@
     font-weight: normal;
   }
 
-  .custom-container {
-    margin-bottom: 250px;
-  }
-
   .title-container {
+    color: black;
     margin: 0 auto;
     padding: 20px 0;
-    border: 1px solid white;
-    background-color: var(--vge-dark-2);
+    background-color: var(--vge-light-2);
+  }
+
+  .section-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--vge-dark-1);
+  }
+
+  .custom-container {
+    margin: 0 20%;
+    width: 60%;
   }
 
   .btn-v {
@@ -302,12 +301,6 @@
     background-color: var(--vge-table-3);
   }
 
-/*  .img-v-custom {
-    min-width: 100%;
-    max-height: 7.5rem;
-    object-fit: fill;
-  }*/
-
   .vge-logged-in-line h5 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -318,11 +311,7 @@
   }
 
   .underline-header {
-    border-bottom: 2px solid var(--vge-light-1);
-  }
-
-  .spacer {
-    height: 350px;
+    border-bottom: 2px solid black;
   }
 </style>
 
@@ -349,6 +338,17 @@
       var email = localStorage.getItem("userEmail");
       if(email) {
         this.userEmail = email;
+      }
+    },
+    mounted() {
+      this.parralaxMarginAdder();
+    },
+    methods: {
+      parralaxMarginAdder() {
+        var customElement = document.getElementById("custom-container-unique");
+          if (customElement.style.transform != "translate3d(0px,0px,0px)") {
+            customElement.style.marginBottom = "500px";
+          }
       }
     },
   }

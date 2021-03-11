@@ -1,42 +1,44 @@
 <template>
-  <div class="profile" v-rellax="{speed: -5}">
-    <div class="title-container row my-5">
-      <div class="col-2"/>
-      <div class="col-8 underline-header">
-        <h2 class="text-center">Pro<span style="letter-spacing: 1px">fi</span>le</h2>
+  <div class="profile">
+    <div class="section-container">
+      <div class="title-container row">
+        <div class="col-2"/>
+        <div class="col-8 underline-header">
+          <h2 class="text-center">Pro<span style="letter-spacing: 1px">fi</span>le</h2>
+        </div>
+        <div class="col-2"/>
       </div>
-      <div class="col-2"/>
-    </div>
 
-    <div class="jumbotron bg-v-dark-2 py-4">
-      <h1 class="display-4">{{ user.first_name }} {{ user.last_name }}</h1>
-      <p class="lead">{{ user.email }}</p>
-      <hr class="my-4"/>
-      <p>{{ user.street }}, {{ user.unit }}</p>
-      <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
-      <hr class="my-2"/>
-      <div class="form-group btn-v-button-group">
-        <span class="float-right">
-          <span class="btn-v-box">
-            <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
+      <div class="jumbotron bg-v-dark-2 py-4">
+        <h1 class="display-4">{{ user.first_name }} {{ user.last_name }}</h1>
+        <p class="lead">{{ user.email }}</p>
+        <hr class="my-4"/>
+        <p>{{ user.street }}, {{ user.unit }}</p>
+        <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
+        <hr class="my-2"/>
+        <div class="form-group btn-v-button-group">
+          <span class="float-right">
+            <span class="btn-v-box">
+              <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
+            </span>
+            <span class="btn-v-box">
+              <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
+            </span>
           </span>
-          <span class="btn-v-box">
-            <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
-          </span>
-        </span>
+        </div>
       </div>
     </div>
 
-    <div class="title-container row my-5">
-      <div class="col-2"/>
-      <div class="col-8 underline-header">
-        <h2 class="text-center">My Collection</h2>
+    <div class="section-container">
+      <div class="title-container row">
+        <div class="col-2"/>
+        <div class="col-8 underline-header">
+          <h2 class="text-center">My Collection</h2>
+        </div>
+        <div class="col-2"/>
       </div>
-      <div class="col-2"/>
-    </div>
 
-    <div>
-      <table class="table mb-5">
+      <table class="table">
         <thead class="thead-v-dark">
           <tr class="text-center">
             <th scope="col">Title</th>
