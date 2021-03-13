@@ -30,12 +30,14 @@
     </div>
 
     <div class="section-container">
-      <div class="title-container row">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">My Collection</h2>
+      <div class="title-container pixel-border">
+        <div class="row">
+          <div class="col-2"/>
+          <div class="col-8 underline-header">
+            <h2 class="text-center">My Collection</h2>
+          </div>
+          <div class="col-2"/>
         </div>
-        <div class="col-2"/>
       </div>
 
       <table class="table">
@@ -140,6 +142,6 @@
         return this.borrowed_cartridges.concat(this.owned_cartridges);
       }
     },
-    mixins: [Vue2Filters.mixin]
+    mixins: [Vue2Filters.mixin],
   };
 </script>

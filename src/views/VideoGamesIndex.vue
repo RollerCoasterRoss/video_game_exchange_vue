@@ -1,5 +1,5 @@
 <template>
-  <div class="video-games-index" v-rellax="{speed: -5}">
+  <div class="video-games-index">
     <div class="title-container row my-5">
       <div class="col-2"/>
       <div class="col-8 underline-header">

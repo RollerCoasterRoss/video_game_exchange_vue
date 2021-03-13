@@ -1,6 +1,14 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
+    <div class="background-image">
+      <parallax
+        parallax
+      >
+        <img src="/img/mario_bg_1.png">
+      </parallax>
+    </div>
+
+    <nav class="navbar relative-top navbar-expand-lg navbar-dark bg-v-dark-2">
       <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'">Video Game Exchange</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,15 +44,16 @@
       </div>
     </nav>
 
-    <div v-if="userEmail" class="container-fluid bg-v-brand text-white vge-logged-in-line">
+    <div v-if="userEmail" class="container-fluid relative-top bg-v-brand text-white vge-logged-in-line">
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div id="custom-container-unique" class="container" @scroll="parallaxMarginAdder()" v-rellax="{speed: -5}">
+    <div class="container">
       <router-view/>
+      <div class="spacer"></div>
     </div>
 
-    <footer class="container-fluid">
+    <footer>
       <h5 class="text-center">This is a test line</h5>
       <h5 class="text-center">This is a test line</h5>
       <h5 class="text-center">This is a test line</h5>
@@ -75,10 +84,17 @@
   body {
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
-    background: url("/img/mario_bg_1.png") var(--vge-dark-1);
+    /*background: url("/img/mario_bg_1.png") var(--vge-dark-1);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
+  }
+
+  .background-image {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
   }
 
   footer {
@@ -114,15 +130,76 @@
 
   .title-container {
     color: black;
-    margin: 0 auto;
-    padding: 20px 0;
-    background-color: var(--vge-light-2);
+    margin: 30px auto;
+    padding: 5px 0;
+    background-color: var(--vge-light-1);
+  }
+
+  .pixel-border {
+    background: var(--vge-light-1);
+    box-shadow:
+      /* Inner Background Color -- Same as inner */
+        0   -6px 0  -2px var(--vge-light-1),
+        0    6px 0  -2px var(--vge-light-1),
+        0  -12px 0  -4px var(--vge-light-1),
+        0   12px 0  -4px var(--vge-light-1),
+        0  -18px 0  -8px var(--vge-light-1),
+        0   18px 0  -8px var(--vge-light-1),
+        0  -24px 0 -12px var(--vge-light-1),
+        0   24px 0 -12px var(--vge-light-1),
+      
+      /* Inner Border */
+       -2px  0   0   0   black,
+        2px  0   0   0   black,
+        0   -4px 0   0   black,
+        0    4px 0   0   black,
+        0  -10px 0  -2px black,
+        0   10px 0  -2px black,
+        0  -14px 0  -4px black,
+        0   14px 0  -4px black,
+        0  -20px 0  -8px black,
+        0   20px 0  -8px black,
+        0  -26px 0 -12px black,
+        0   26px 0 -12px black,
+      
+      /* Middle Border -- Accent */
+       -4px  0   0   0   black,
+        4px  0   0   0   black,
+        0   -2px 0   2px black,
+        0    2px 0   2px black,
+        0   -8px 0   0px black,
+        0    8px 0   0px black,
+        0  -12px 0  -2px black,
+        0   12px 0  -2px black,
+        0  -16px 0  -4px black,
+        0   16px 0  -4px black,
+        0  -22px 0  -8px black,
+        0   22px 0  -8px black,
+        0  -28px 0 -12px black,
+        0   28px 0 -12px black,
+      
+      /* Outer Border */
+       -6px  0   0   0   var(--vge-dark-1),
+        6px  0   0   0   var(--vge-dark-1),
+        0    0   0   4px var(--vge-dark-1),
+        0   -6px 0   2px var(--vge-dark-1),
+        0    6px 0   2px var(--vge-dark-1),
+        0  -10px 0   0   var(--vge-dark-1),
+        0   10px 0   0   var(--vge-dark-1),
+        0  -14px 0  -2px var(--vge-dark-1),
+        0   14px 0  -2px var(--vge-dark-1),
+        0  -18px 0  -4px var(--vge-dark-1),
+        0   18px 0  -4px var(--vge-dark-1),
+        0  -24px 0  -8px var(--vge-dark-1),
+        0   24px 0  -8px var(--vge-dark-1),
+        0  -30px 0 -12px var(--vge-dark-1),
+        0   30px 0 -12px var(--vge-dark-1);
   }
 
   .section-container {
     margin: 20px 0;
     padding: 20px;
-    background-color: var(--vge-dark-1);
+    background-color: var(--vge-dark-2);
   }
 
   .btn-v {
@@ -310,16 +387,30 @@
   .underline-header {
     border-bottom: 2px solid black;
   }
+
+  .spacer {
+    height: 10px;
+  }
+
+  .parallax-banner {
+    height: 100px;
+    overflow: hidden;
+  }
 </style>
 
 <script>
   var axios = require("axios");
 
+  import Parallax from 'vue-parallaxy'
+
   export default {
     data: function() {
       return {
         userEmail: "",
-      };
+      }
+    },
+    components: {
+      Parallax
     },
     created: function() {
       var notLoggedIn = !localStorage.getItem("jwt");
@@ -335,23 +426,25 @@
       var email = localStorage.getItem("userEmail");
       if(email) {
         this.userEmail = email;
-      }
-
-      window.addEventListener("scroll", this.parallaxMarginAdder);
+      }    
     },
     methods: {
-      parallaxMarginAdder() {
-        var customElement = document.getElementById("custom-container-unique");
+      // parallaxMarginAdder() {
+      //   var customElement = this.$el.querySelector(".custom-container");
+      //   // var body = window.querySelector('body');
+      //   // console.log(body.style.height);
         
-        const style = window.getComputedStyle(customElement);
-        const matrix = style.transform || style.webkitTransform || style.mozTransform;
+      //   const elStyle = window.getComputedStyle(customElement);
+      //   const matrix = elStyle.transform || elStyle.webkitTransform || elStyle.mozTransform;
 
-        const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
-        const matrixValue = matrixValues[5];
-        const yAxisValue = parseInt(matrixValue);
+      //   const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
+      //   const matrixValue = matrixValues[5];
+      //   const yAxisValue = parseInt(matrixValue);
 
-        customElement.style.marginBottom = (yAxisValue + 10) + "px";
-      }
-    },
+      //   if (yAxisValue > 0) {
+      //     customElement.style.marginBottom = (yAxisValue + 25) + "px";
+      //   }
+      // }
+    }
   }
 </script>
