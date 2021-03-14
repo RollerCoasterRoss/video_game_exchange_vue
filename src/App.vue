@@ -8,7 +8,7 @@
       </parallax>
     </div>
 
-    <nav class="navbar relative-top navbar-expand-lg navbar-dark bg-v-dark-2">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
       <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'">Video Game Exchange</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
       </div>
     </nav>
 
-    <div v-if="userEmail" class="container-fluid relative-top bg-v-brand text-white vge-logged-in-line">
+    <div v-if="userEmail" class="container-fluid bg-v-brand text-white vge-logged-in-line">
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
@@ -76,18 +76,14 @@
     --vge-info-lt: #7BC6C6;
     --vge-danger: #890000;
     --vge-danger-lt: #FF9E9E;
-    --vge-table-1: #7FB808;
-    --vge-table-2: #FB4233; 
-    --vge-table-3: #6974C5;
+    --vge-table-1: #73A3D7;
+    --vge-table-2: #E93636;
+    --vge-table-3: #6CA858;
   }
 
   body {
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
-    /*background: url("/img/mario_bg_1.png") var(--vge-dark-1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
   }
 
   .background-image {
@@ -200,6 +196,7 @@
     margin: 20px 0;
     padding: 20px;
     background-color: var(--vge-dark-2);
+    border-radius: 25px;
   }
 
   .btn-v {
@@ -389,7 +386,11 @@
   }
 
   .spacer {
-    height: 10px;
+    min-height: 20px;
+  }
+
+  .login-spacer {
+    min-height: 75px;
   }
 
   .parallax-banner {
@@ -426,25 +427,7 @@
       var email = localStorage.getItem("userEmail");
       if(email) {
         this.userEmail = email;
-      }    
+      }
     },
-    methods: {
-      // parallaxMarginAdder() {
-      //   var customElement = this.$el.querySelector(".custom-container");
-      //   // var body = window.querySelector('body');
-      //   // console.log(body.style.height);
-        
-      //   const elStyle = window.getComputedStyle(customElement);
-      //   const matrix = elStyle.transform || elStyle.webkitTransform || elStyle.mozTransform;
-
-      //   const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
-      //   const matrixValue = matrixValues[5];
-      //   const yAxisValue = parseInt(matrixValue);
-
-      //   if (yAxisValue > 0) {
-      //     customElement.style.marginBottom = (yAxisValue + 25) + "px";
-      //   }
-      // }
-    }
   }
 </script>
