@@ -11,14 +11,14 @@
         </div>
       </div>
 
-      <div class="jumbotron bg-v-dark-2 py-4">
+      <div class="jumbotron bg-v-dark-2">
         <h1 class="display-4">{{ user.first_name }} {{ user.last_name }}</h1>
         <p class="lead">{{ user.email }}</p>
-        <hr class="my-4"/>
+        <hr class="my-2"/>
         <p>{{ user.street }}, {{ user.unit }}</p>
         <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
         <hr class="my-2"/>
-        <div class="form-group btn-v-button-group">
+        <div class="form-group">
           <span class="float-right">
             <span class="btn-v-box">
               <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>

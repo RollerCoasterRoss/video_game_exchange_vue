@@ -24,7 +24,7 @@
             <label>Password:</label>
             <input type="password" class="form-control" v-model="password">
           </div>
-          <div class="form-group btn-v-button-group">
+          <div class="form-group">
             <span class="float-right">
               <span class="btn-v-box">
                 <input type="submit" class="btn-v btn-v-brand" value="Submit">

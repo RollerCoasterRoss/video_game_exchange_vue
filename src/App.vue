@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax
-        parallax
-      >
+      <parallax parallax :speedFactor="0.5" containerClass="parallax-img-container" sectionClass="parallax-outer-container" parallaxClass="parallax-modifier">
         <img src="/img/mario_bg_1.png">
       </parallax>
     </div>
@@ -93,6 +91,37 @@
     z-index: -1000;
   }
 
+  .background-image img {
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+  }
+
+  /* Masthead */
+  .parallax-outer-container {
+    position: relative;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    z-index: -100;
+  }
+
+  /* Masthead_image */
+  .parallax-img-container {
+    width: 100%;
+    overflow: hidden;
+    height: 200%;
+  }
+
+  /* is-parallax */
+  .parallax-modifier {
+    left: 0;
+    position: absolute;
+    will-change: transform;
+    right: 0;
+    top: 0;
+  }
+
   footer {
     min-height: 200px;
     background-color: var(--vge-dark-2);
@@ -102,9 +131,17 @@
     font-size: 12px;
   }
 
+  input {
+    border: none;
+  }
+
   input[type='radio'] {
     margin: 3px;
     transform: scale(1.5);
+  }
+
+  button {
+    border: none;
   }
 
   a.btn-v, a:link.btn-v, a:visited.btn-v, a:hover.btn-v {
@@ -199,6 +236,10 @@
     border-radius: 25px;
   }
 
+  .inner-section-container {
+    text-align: center;
+  }
+
   .btn-v {
       display: inline-block;
       font-weight: 400;
@@ -209,13 +250,10 @@
         -moz-user-select: none;
         -ms-user-select: none;
       user-select: none;
-      background-color: transparent;
-      border: 1px solid transparent;
       padding: .375rem .79rem;
       font-size: 1rem;
       line-height: 1.5;
       border-radius: 1.2rem;
-      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
   .btn-v-box {
@@ -227,8 +265,6 @@
       -moz-user-select: none;
       -ms-user-select: none;
     user-select: none;
-    border: 1px solid transparent;
-    /*padding: .375rem .75rem;*/
     font-size: 1rem;
     line-height: 1.5;
 
@@ -241,8 +277,8 @@
     margin-left: 10px;
   }
 
-  .btn-v-button-group {
-    height: 46px;
+  .btn-v-align-right {
+    text-align: right;
   }
 
   .btn-sm {
@@ -275,6 +311,10 @@
 
   .bg-v-light-1 {
     background-color: var(--vge-light-1);
+  }
+
+  .bg-v-light-2 {
+    background-color: var(--vge-light-2);
   }
 
   .bg-v-black {
@@ -391,11 +431,6 @@
 
   .login-spacer {
     min-height: 75px;
-  }
-
-  .parallax-banner {
-    height: 100px;
-    overflow: hidden;
   }
 </style>
 
