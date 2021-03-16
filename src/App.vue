@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container" sectionClass="parallax-outer-container" parallaxClass="parallax-modifier">
+      <parallax parallax containerClass="parallax-img-container" sectionClass="parallax-outer-container" parallaxClass="parallax-modifier">
         <img src="/img/mario_bg_1.png">
       </parallax>
     </div>
@@ -113,7 +113,7 @@
 
   .background-image img {
     width: 100%;
-    height: 100%;
+    height: 125%;
   }
 
   /* Masthead */
@@ -129,7 +129,7 @@
   .parallax-img-container {
     width: 100%;
     overflow: hidden;
-    height: 133%;
+    min-height: 150%;
   }
 
   /* is-parallax */
