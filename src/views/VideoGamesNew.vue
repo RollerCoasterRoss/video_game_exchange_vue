@@ -58,12 +58,12 @@
           <input type="number" class="form-control" v-model="release_year" placeholder="example: 1986">
         </div>
 
-        <div class="form-group btn-v-button-group">
-          <span class="float-right">
+        <div class="form-group">
+          <div class="btn-v-align-right">
             <span class="btn-v-box">
               <input type="submit" class="btn-v btn-v-brand" value="Create">
             </span>
-          </span>
+          </div>
         </div>
       </form>
   </div>

@@ -46,12 +46,12 @@
           <input class="form-control" type="text" v-model="user.zip">
         </div>
 
-        <div class="form-group btn-v-button-group">
-          <span class="float-right">
+        <div class="form-group">
+          <div class="btn-v-align-right">
             <span class="btn-v-box">
               <input type="submit" class="btn-v btn-v-brand" value="Update">
             </span>
-          </span>
+          </div>
         </div>
       </form>
     </div>

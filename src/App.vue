@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax parallax :speedFactor="0.5" containerClass="parallax-img-container" sectionClass="parallax-outer-container" parallaxClass="parallax-modifier">
+      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container" sectionClass="parallax-outer-container" parallaxClass="parallax-modifier">
         <img src="/img/mario_bg_1.png">
       </parallax>
     </div>
@@ -51,10 +51,30 @@
       <div class="spacer"></div>
     </div>
 
-    <footer>
-      <h5 class="text-center">This is a test line</h5>
-      <h5 class="text-center">This is a test line</h5>
-      <h5 class="text-center">This is a test line</h5>
+    <footer class="container-fluid">
+      <div class="row">
+        <div class="col-3 footer-container">
+          <p>
+            <a href="https://github.com/RollerCoasterRoss" target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/rosswhitehead86/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </p>
+        </div>
+        <div class="col-6 footer-container">
+          <h1>Game On!</h1>
+        </div>
+        <div class="col-3 footer-container">
+          <p>Contact:</p>
+          <p>Name: Ross Whitehead</p>
+          <p>Phone: 847-436-1169</p>
+          <p>E-Mail: rsw3020@gmail.com</p>
+        </div>
+      </div>
     </footer>
 
   </div>
@@ -94,7 +114,6 @@
   .background-image img {
     width: 100%;
     height: 100%;
-    object-position: center center;
   }
 
   /* Masthead */
@@ -110,7 +129,7 @@
   .parallax-img-container {
     width: 100%;
     overflow: hidden;
-    height: 200%;
+    height: 133%;
   }
 
   /* is-parallax */
@@ -123,8 +142,30 @@
   }
 
   footer {
+    margin-top: 50px;
     min-height: 200px;
     background-color: var(--vge-dark-2);
+  }
+
+  .footer-container {
+    padding-top: 2%;
+    text-align: center;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .footer-container a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-container h1{
+    margin-top: 4%;
+    font-size: 65px;
+  }
+
+  .footer-container p{
+    font-size: 12px;
   }
 
   table {
@@ -161,9 +202,20 @@
     font-weight: normal;
   }
 
+  .section-container {
+    margin: 36px 0;
+    padding: 20px;
+    background-color: var(--vge-dark-2);
+    border-radius: 25px;
+  }
+
+  .inner-section-container {
+    text-align: center;
+  }
+
   .title-container {
     color: black;
-    margin: 30px auto;
+    margin: 36px auto;
     padding: 5px 0;
     background-color: var(--vge-light-1);
   }
@@ -229,17 +281,6 @@
         0   30px 0 -12px var(--vge-dark-1);
   }
 
-  .section-container {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: var(--vge-dark-2);
-    border-radius: 25px;
-  }
-
-  .inner-section-container {
-    text-align: center;
-  }
-
   .btn-v {
       display: inline-block;
       font-weight: 400;
@@ -286,7 +327,7 @@
   }
 
   .form-inline, .custom-input {
-    font-size: .65rem;
+    font-size: .5rem;
   }
 
   select.custom-select.standard-select {
