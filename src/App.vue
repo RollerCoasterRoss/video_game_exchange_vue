@@ -1,5 +1,11 @@
 <template>
   <div id="app">
+    <div class="background-image">
+      <parallax parallax :speedFactor="0.33" containerClass="parallax-img-container">
+        <img src="/img/mario_bg_1.png">
+      </parallax>
+    </div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
       <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'">Video Game Exchange</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,15 +46,35 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div class="container custom-container">
+    <div class="container">
       <router-view/>
+      <div class="spacer"></div>
     </div>
 
     <footer class="container-fluid">
-      <h5 class="text-center my-1">This is test line 1</h5>
-      <h5 class="text-center my-1">This is test line 2</h5>
-      <h5 class="text-center my-1">This is test line 3</h5>
-      <h5 class="text-center my-1">This is test line 4</h5>
+      <div class="row">
+        <div class="col-3 footer-container">
+          <p>
+            <a href="https://github.com/RollerCoasterRoss" target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/rosswhitehead86/" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </p>
+        </div>
+        <div class="col-6 footer-container">
+          <h1>Game On!</h1>
+        </div>
+        <div class="col-3 footer-container">
+          <p>Contact:</p>
+          <p>Name: Ross Whitehead</p>
+          <p>Phone: 847-436-1169</p>
+          <p>E-Mail: rsw3020@gmail.com</p>
+        </div>
+      </div>
     </footer>
 
   </div>
@@ -68,34 +94,75 @@
     --vge-info-lt: #7BC6C6;
     --vge-danger: #890000;
     --vge-danger-lt: #FF9E9E;
-    --vge-table-1: #7FB808;
-    --vge-table-2: #FB4233; 
-    --vge-table-3: #6974C5;
+    --vge-table-1: #73A3D7;
+    --vge-table-2: #E93636;
+    --vge-table-3: #6CA858;
   }
 
   body {
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
-    background: url("/img/mario_bg_1.png") var(--vge-dark-1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+  }
+
+  .background-image {
+    position: fixed;
+    width: 100%;
+    z-index: -1000;
+  }
+
+  .background-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .parallax-img-container {
+    width: 102%;
+    overflow: hidden;
+    height: 175%;
   }
 
   footer {
-    position: relative;
-    height: 200px;
-    bottom: 0;
+    margin-top: 50px;
+    min-height: 200px;
     background-color: var(--vge-dark-2);
+  }
+
+  .footer-container {
+    padding-top: 2%;
+    text-align: center;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .footer-container a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-container h1{
+    margin-top: 4%;
+    font-size: 65px;
+  }
+
+  .footer-container p{
+    font-size: 12px;
   }
 
   table {
     font-size: 12px;
   }
 
+  input {
+    border: none;
+  }
+
   input[type='radio'] {
     margin: 3px;
     transform: scale(1.5);
+  }
+
+  button {
+    border: none;
   }
 
   a.btn-v, a:link.btn-v, a:visited.btn-v, a:hover.btn-v {
@@ -115,8 +182,83 @@
     font-weight: normal;
   }
 
-  .custom-container {
-    margin-bottom: 250px;
+  .section-container {
+    margin: 36px 0;
+    padding: 20px;
+    background-color: var(--vge-dark-2);
+    border-radius: 25px;
+  }
+
+  .inner-section-container {
+    text-align: center;
+  }
+
+  .title-container {
+    color: black;
+    margin: 36px auto;
+    padding: 5px 0;
+    background-color: var(--vge-light-1);
+  }
+
+  .pixel-border {
+    background: var(--vge-light-1);
+    box-shadow:
+      /* Inner Background Color -- Same as inner */
+        0   -6px 0  -2px var(--vge-light-1),
+        0    6px 0  -2px var(--vge-light-1),
+        0  -12px 0  -4px var(--vge-light-1),
+        0   12px 0  -4px var(--vge-light-1),
+        0  -18px 0  -8px var(--vge-light-1),
+        0   18px 0  -8px var(--vge-light-1),
+        0  -24px 0 -12px var(--vge-light-1),
+        0   24px 0 -12px var(--vge-light-1),
+      
+      /* Inner Border */
+       -2px  0   0   0   black,
+        2px  0   0   0   black,
+        0   -4px 0   0   black,
+        0    4px 0   0   black,
+        0  -10px 0  -2px black,
+        0   10px 0  -2px black,
+        0  -14px 0  -4px black,
+        0   14px 0  -4px black,
+        0  -20px 0  -8px black,
+        0   20px 0  -8px black,
+        0  -26px 0 -12px black,
+        0   26px 0 -12px black,
+      
+      /* Middle Border -- Accent */
+       -4px  0   0   0   black,
+        4px  0   0   0   black,
+        0   -2px 0   2px black,
+        0    2px 0   2px black,
+        0   -8px 0   0px black,
+        0    8px 0   0px black,
+        0  -12px 0  -2px black,
+        0   12px 0  -2px black,
+        0  -16px 0  -4px black,
+        0   16px 0  -4px black,
+        0  -22px 0  -8px black,
+        0   22px 0  -8px black,
+        0  -28px 0 -12px black,
+        0   28px 0 -12px black,
+      
+      /* Outer Border */
+       -6px  0   0   0   var(--vge-dark-1),
+        6px  0   0   0   var(--vge-dark-1),
+        0    0   0   4px var(--vge-dark-1),
+        0   -6px 0   2px var(--vge-dark-1),
+        0    6px 0   2px var(--vge-dark-1),
+        0  -10px 0   0   var(--vge-dark-1),
+        0   10px 0   0   var(--vge-dark-1),
+        0  -14px 0  -2px var(--vge-dark-1),
+        0   14px 0  -2px var(--vge-dark-1),
+        0  -18px 0  -4px var(--vge-dark-1),
+        0   18px 0  -4px var(--vge-dark-1),
+        0  -24px 0  -8px var(--vge-dark-1),
+        0   24px 0  -8px var(--vge-dark-1),
+        0  -30px 0 -12px var(--vge-dark-1),
+        0   30px 0 -12px var(--vge-dark-1);
   }
 
   .btn-v {
@@ -129,13 +271,10 @@
         -moz-user-select: none;
         -ms-user-select: none;
       user-select: none;
-      background-color: transparent;
-      border: 1px solid transparent;
       padding: .375rem .79rem;
       font-size: 1rem;
       line-height: 1.5;
       border-radius: 1.2rem;
-      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
 
   .btn-v-box {
@@ -147,8 +286,6 @@
       -moz-user-select: none;
       -ms-user-select: none;
     user-select: none;
-    border: 1px solid transparent;
-    /*padding: .375rem .75rem;*/
     font-size: 1rem;
     line-height: 1.5;
 
@@ -161,8 +298,8 @@
     margin-left: 10px;
   }
 
-  .btn-v-button-group {
-    height: 46px;
+  .btn-v-align-right {
+    text-align: right;
   }
 
   .btn-sm {
@@ -170,7 +307,7 @@
   }
 
   .form-inline, .custom-input {
-    font-size: .65rem;
+    font-size: .5rem;
   }
 
   select.custom-select.standard-select {
@@ -195,6 +332,10 @@
 
   .bg-v-light-1 {
     background-color: var(--vge-light-1);
+  }
+
+  .bg-v-light-2 {
+    background-color: var(--vge-light-2);
   }
 
   .bg-v-black {
@@ -265,14 +406,6 @@
     background-color: var(--vge-danger-lt);
   }
 
-/*  .bg-v-image {
-    margin: 0;
-    padding: 0;
-    background: url("/img/donkey_kong.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }*/
-
   .table .thead-v-dark th {
     color: white;
     background-color: black;
@@ -300,12 +433,6 @@
     background-color: var(--vge-table-3);
   }
 
-  .img-v-custom {
-    min-width: 100%;
-    max-height: 7.5rem;
-    object-fit: fill;
-  }
-
   .vge-logged-in-line h5 {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -316,18 +443,31 @@
   }
 
   .underline-header {
-    border-bottom: 2px solid var(--vge-light-1);
+    border-bottom: 2px solid black;
+  }
+
+  .spacer {
+    min-height: 20px;
+  }
+
+  .login-spacer {
+    min-height: 75px;
   }
 </style>
 
 <script>
   var axios = require("axios");
 
+  import Parallax from 'vue-parallaxy'
+
   export default {
     data: function() {
       return {
         userEmail: "",
-      };
+      }
+    },
+    components: {
+      Parallax
     },
     created: function() {
       var notLoggedIn = !localStorage.getItem("jwt");

@@ -12,9 +12,8 @@
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "rellax": "^1.12.1",
     "vue": "^2.6.11",
-    "vue-rellax": "^0.2.0",
+    "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.2.0",
     "vue2-filters": "^0.11.0"
   },

@@ -1,46 +1,48 @@
 <template>
-  <div class="profile" v-rellax="{speed: -5}">
-    <div class="row my-5">
-      <div class="col-2"/>
-      <div class="col-8 underline-header">
-        <h2 class="text-center">Pro<span style="letter-spacing: 1px">fi</span>le</h2>
-      </div>
-      <div class="col-2"/>
-    </div>
-
-    <div class="jumbotron bg-v-dark-2 py-4">
-      <h1 class="display-4">{{ user.first_name }} {{ user.last_name }}</h1>
-      <p class="lead">{{ user.email }}</p>
-      <hr class="my-4"/>
-      <p>{{ user.street }}, {{ user.unit }}</p>
-      <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
-      <hr class="my-2"/>
-      <div class="form-group btn-v-button-group">
-        <span class="float-right">
-          <span class="btn-v-box">
-            <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
-          </span>
-          <span class="btn-v-box">
-            <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
-          </span>
-        </span>
-      </div>
-    </div>
-
-<!--       <div>
-        <img class="img-v-custom" src="/img/donkey_kong_level_1.png" alt="DK Middle">
-      </div> -->
-
-    <div>
-      <div class="row my-5">
-        <div class="col-2"/>
-        <div class="col-8 underline-header">
-          <h2 class="text-center">My Collection</h2>
+  <div class="profile">
+    <div class="section-container">
+      <div class="title-container pixel-border">
+        <div class="row">
+          <div class="col-2"/>
+          <div class="col-8 underline-header">
+            <h2 class="text-center">Pro<span style="letter-spacing: 1px">fi</span>le</h2>
+          </div>
+          <div class="col-2"/>
         </div>
-        <div class="col-2"/>
       </div>
 
-      <table class="table mb-5">
+      <div class="jumbotron bg-v-dark-2">
+        <h1 class="display-4">{{ user.first_name }} {{ user.last_name }}</h1>
+        <p class="lead">{{ user.email }}</p>
+        <hr class="my-2"/>
+        <p>{{ user.street }}, {{ user.unit }}</p>
+        <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
+        <hr class="my-2"/>
+        <div class="form-group">
+          <span class="float-right">
+            <span class="btn-v-box">
+              <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
+            </span>
+            <span class="btn-v-box">
+              <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-container">
+      <div class="title-container pixel-border">
+        <div class="row">
+          <div class="col-2"/>
+          <div class="col-8 underline-header">
+            <h2 class="text-center">My Collection</h2>
+          </div>
+          <div class="col-2"/>
+        </div>
+      </div>
+
+      <table class="table">
         <thead class="thead-v-dark">
           <tr class="text-center">
             <th scope="col">Title</th>
@@ -67,10 +69,6 @@
         </tbody>
       </table>
     </div>
-
-<!--       <div>
-        <img class="img-v-custom" src="/img/donkey_kong_level_3.png" alt="DK Bottom">
-      </div> -->
 
   </div>
 </template>
@@ -146,6 +144,6 @@
         return this.borrowed_cartridges.concat(this.owned_cartridges);
       }
     },
-    mixins: [Vue2Filters.mixin]
+    mixins: [Vue2Filters.mixin],
   };
 </script>
