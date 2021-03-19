@@ -10,7 +10,9 @@
           <div class="col-2"/>
         </div>
       </div>
+    </div>
 
+    <div class="section-container">
       <form v-on:submit.prevent="updateUser()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -66,42 +68,40 @@
           <div class="col-2"/>
         </div>
       </div>
+    </div>
 
-      <div class="text-center">
+    <div class="section-container">
+      <div class="text-center mb-3">
         <span class="btn-v-box">
           <router-link to="/video_games" class="btn-v btn-v-brand">Add Game to Collection</router-link>
         </span>
       </div>
-
-      <div class="section-container">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr class="text-center">
-              <th scope="col">Title</th>
-              <th scope="col">Platform</th>
-              <th scope="col">Available</th>
-              <th scope="col" class="nowrap">Borrowed By</th>
-              <th scope="col" class="nowrap">Borrowed On</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr 
-              v-for="cartridge in cartridges"
-              class="text-center"
-              :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
-            >
-              <th scope="row">{{ cartridge.video_game.title }}</th>
-              <td>{{ cartridge.video_game.formatted.platform }}</td>
-              <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
-              <td>{{ cartridge.borrower_name }}</td>
-              <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
-              <td><button v-if="cartridge.owned_and_playable" class="btn-v btn-v-dark-1 btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+      <table class="table">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th scope="col">Title</th>
+            <th scope="col">Platform</th>
+            <th scope="col">Available</th>
+            <th scope="col" class="nowrap">Borrowed By</th>
+            <th scope="col" class="nowrap">Borrowed On</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr 
+            v-for="cartridge in cartridges"
+            class="text-center"
+            :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
+          >
+            <th scope="row">{{ cartridge.video_game.title }}</th>
+            <td>{{ cartridge.video_game.formatted.platform }}</td>
+            <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
+            <td>{{ cartridge.borrower_name }}</td>
+            <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
+            <td><button v-if="cartridge.owned_and_playable" class="btn-v btn-v-dark-1 btn-sm" @click="destroyCartridge(cartridge)">Throw Away</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>

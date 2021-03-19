@@ -10,37 +10,33 @@
           <div class="col-2"/>
         </div>
       </div>
-
-      <div class="section-container">
-        <form v-on:submit.prevent="submit()">
-          <ul>
-            <li class="text-danger" v-for="error in errors">{{ error }}</li>
-          </ul>
-          <div class="form-group">
-            <label>Email:</label>
-            <input type="email" class="form-control" v-model="email">
-          </div>
-          <div class="form-group">
-            <label>Password:</label>
-            <input type="password" class="form-control" v-model="password">
-          </div>
-          <div class="form-group">
-            <span class="float-right">
-              <span class="btn-v-box">
-                <input type="submit" class="btn-v btn-v-brand" value="Submit">
-              </span>
-              <span class="btn-v-box">
-                <router-link to="/signup" class="btn-v btn-v-brand">Sign Up</router-link>
-              </span>
-            </span>
-          </div>
-        </form>
-        </div>
-      </div>
-
-    <div class="login-spacer">
     </div>
 
+    <div class="section-container">
+      <form v-on:submit.prevent="submit()">
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        </ul>
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" class="form-control" v-model="email">
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" class="form-control" v-model="password">
+        </div>
+        <div class="form-group">
+          <div class="btn-v-align-right">
+            <span class="btn-v-box">
+              <input type="submit" class="btn-v btn-v-brand" value="Submit">
+            </span>
+            <span class="btn-v-box">
+              <router-link to="/signup" class="btn-v btn-v-brand">Sign Up</router-link>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 

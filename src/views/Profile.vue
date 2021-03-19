@@ -41,7 +41,9 @@
           <div class="col-2"/>
         </div>
       </div>
+    </div>
 
+    <div class="section-container">
       <table class="table">
         <thead class="thead-v-dark">
           <tr class="text-center">

@@ -10,7 +10,9 @@
           <div class="col-2"/>
         </div>
       </div>
+    </div>
 
+    <div class="section-container">
       <form v-on:submit.prevent="createVideoGame()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -66,8 +68,7 @@
           </div>
         </div>
       </form>
-  </div>
-
+    </div>
   </div>
 </template>
 

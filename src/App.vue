@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax parallax :speedFactor="0.33" containerClass="parallax-img-container">
+      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container">
         <img src="/img/mario_bg_1.png">
       </parallax>
     </div>
@@ -48,19 +48,20 @@
 
     <div class="container">
       <router-view/>
-      <div class="spacer"></div>
+      <div class="spacer">
+      </div>
     </div>
 
     <footer class="container-fluid">
       <div class="row">
         <div class="col-3 footer-container">
           <p>
-            <a href="https://github.com/RollerCoasterRoss" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/RollerCoasterRoss" class="link-v-no-style" target="_blank" rel="noopener noreferrer">
               Github
             </a>
           </p>
           <p>
-            <a href="https://www.linkedin.com/in/rosswhitehead86/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rosswhitehead86/" class="link-v-no-style" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
           </p>
@@ -111,18 +112,17 @@
   }
 
   .background-image img {
-    width: 100%;
+    min-width: 100%;
     height: 100%;
   }
 
   .parallax-img-container {
-    width: 102%;
+    min-width: 100%;
     overflow: hidden;
-    height: 175%;
+    height: 150%;
   }
 
   footer {
-    margin-top: 50px;
     min-height: 200px;
     background-color: var(--vge-dark-2);
   }
@@ -183,20 +183,16 @@
   }
 
   .section-container {
-    margin: 36px 0;
+    margin: 40px 0;
     padding: 20px;
     background-color: var(--vge-dark-2);
     border-radius: 25px;
   }
 
-  .inner-section-container {
-    text-align: center;
-  }
-
   .title-container {
     color: black;
-    margin: 36px auto;
-    padding: 5px 0;
+    margin: 20px 0;
+    padding: 10px 0;
     background-color: var(--vge-light-1);
   }
 
@@ -447,11 +443,7 @@
   }
 
   .spacer {
-    min-height: 20px;
-  }
-
-  .login-spacer {
-    min-height: 75px;
+    min-height: 50px;
   }
 </style>
 
