@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container">
+      <parallax parallax :speedFactor="0.40" containerClass="parallax-img-container">
         <img src="/img/mario_bg_1.png">
       </parallax>
     </div>
@@ -117,12 +117,13 @@
   }
 
   .parallax-img-container {
-    min-width: 100%;
+    width: 100%;
     overflow: hidden;
-    height: 150%;
+    min-height: 200%;
   }
 
   footer {
+    bottom: 0;
     min-height: 200px;
     background-color: var(--vge-dark-2);
   }
@@ -304,7 +305,7 @@
   }
 
   .form-inline, .custom-input {
-    font-size: .5rem;
+    font-size: .6rem;
   }
 
   select.custom-select.standard-select {
@@ -379,6 +380,11 @@
     background-color: var(--vge-dark-1);
   }
 
+  .btn-v-light-2 {
+    color: black;
+    background-color: var(--vge-light-2);
+  }
+
   .bg-v-success {
     background-color: var(--vge-success);
   }
@@ -444,7 +450,11 @@
   }
 
   .spacer {
-    min-height: 80px;
+    height: 62px;
+  }
+
+  .spacer-2 {
+    height: 94px;
   }
 </style>
 

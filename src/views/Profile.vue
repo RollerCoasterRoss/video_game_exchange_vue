@@ -56,7 +56,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr 
+          <tr
             v-for="cartridge in orderBy(cartridges, 'video_game.title')"
             class="text-center"
             :class="{'table-v-bg-1': cartridge.owned_and_playable, 'table-v-bg-2': cartridge.borrowed_from_me, 'table-v-bg-3': cartridge.borrowed_by_me}"
@@ -66,7 +66,7 @@
             <td>{{ cartridge.borrowed_from_me ? "No" : "Yes" }}</td>
             <td>{{ cartridge.borrower_name }}</td>
             <td>{{ cartridge.owned_and_playable ? "N/A" : cartridge.lend_date }}</td>
-            <td><button v-if="cartridge.borrowed_by_me" class="btn-v btn-v-dark-1 btn-sm" @click="returnCartridge(cartridge.id)">Return</button></td>
+            <td><button v-if="cartridge.borrowed_by_me" class="btn-v btn-v-light-2 btn-sm" @click="returnCartridge(cartridge.id)">Return</button></td>
           </tr>
         </tbody>
       </table>
