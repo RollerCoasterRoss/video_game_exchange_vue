@@ -28,7 +28,7 @@
     
       <div class="text-center">
         <span class="btn-v-box">
-          <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridges to Collection</router-link>
+          <router-link to="/video_games" class="btn-v btn-v-brand">Add Video Games To My Collection</router-link>
         </span>
       </div>
     </div>

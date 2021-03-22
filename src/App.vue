@@ -27,8 +27,8 @@
               <span v-if="userEmail">
                 <router-link class="dropdown-item" to="/profile">My Profile</router-link>
                 <router-link class="dropdown-item" to="/cartridges">Borrow Game</router-link>
-                <router-link class="dropdown-item" to="/video_games">Add Games to my Collection</router-link>
-                <router-link class="dropdown-item" to="/video_games/new">Add Game to Database</router-link>
+                <router-link class="dropdown-item" to="/video_games">Add Games To My Collection</router-link>
+                <router-link class="dropdown-item" to="/video_games/new">Add Game To Database</router-link>
                 <div class="dropdown-divider"></div>
                 <router-link class="dropdown-item" to="/logout">Logout</router-link>
               </span>
@@ -180,6 +180,7 @@
     color: var(--vge-brand);
     text-decoration: none;
     font-weight: normal;
+    border-bottom: 2px solid var(--vge-brand);
   }
 
   .section-container {
@@ -443,7 +444,7 @@
   }
 
   .spacer {
-    min-height: 50px;
+    min-height: 80px;
   }
 </style>
 

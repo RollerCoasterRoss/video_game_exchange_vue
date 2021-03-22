@@ -24,7 +24,7 @@
               <router-link :to="'/users/' + user.id + '/edit'" class="btn-v btn-v-brand">Edit</router-link>
             </span>
             <span class="btn-v-box">
-              <router-link to="/video_games" class="btn-v btn-v-brand">Add Cartridge to Collection</router-link>
+              <router-link to="/video_games" class="btn-v btn-v-brand">Add Video Games To My Collection</router-link>
             </span>
           </span>
         </div>
