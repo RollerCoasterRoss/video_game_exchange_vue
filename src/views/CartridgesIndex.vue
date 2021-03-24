@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-2"/>
           <div class="col-8 underline-header">
-            <h2 class="text-center">Borrow Cartridges</h2>
+            <h2 class="text-center">Borrow Game</h2>
           </div>
           <div class="col-2"/>
         </div>

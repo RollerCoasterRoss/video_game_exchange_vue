@@ -3,6 +3,7 @@
     <div class="background-image">
       <parallax parallax :speedFactor="0.40" containerClass="parallax-img-container">
         <img src="/img/mario_bg_1.png">
+        <img src="/img/mario_bg_2.png">
       </parallax>
     </div>
 
@@ -113,13 +114,13 @@
 
   .background-image img {
     min-width: 100%;
-    height: 100%;
+    height: 110%;
   }
 
   .parallax-img-container {
-    width: 100%;
+    min-width: 100%;
     overflow: hidden;
-    min-height: 200%;
+    height: 175%;
   }
 
   footer {
@@ -450,11 +451,11 @@
   }
 
   .spacer {
-    height: 62px;
+    height: 60px;
   }
 
   .spacer-2 {
-    height: 94px;
+    height: 100px;
   }
 </style>
 
