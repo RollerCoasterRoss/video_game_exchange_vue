@@ -119,7 +119,7 @@
   .parallax-img-container {
     min-width: 100%;
     overflow: hidden;
-    height: 300%;
+    height: 250%;
   }
 
   footer {
