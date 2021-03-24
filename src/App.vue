@@ -1,9 +1,8 @@
 <template>
   <div id="app">
     <div class="background-image">
-      <parallax parallax :speedFactor="0.40" containerClass="parallax-img-container">
+      <parallax parallax :speedFactor="0.33" containerClass="parallax-img-container">
         <img src="/img/mario_bg_1.png">
-        <img src="/img/mario_bg_2.png">
       </parallax>
     </div>
 
@@ -114,13 +113,13 @@
 
   .background-image img {
     min-width: 100%;
-    height: 110%;
+    height: 100%;
   }
 
   .parallax-img-container {
     min-width: 100%;
     overflow: hidden;
-    height: 175%;
+    height: 300%;
   }
 
   footer {
