@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div class="background-image">
-      <parallax parallax :speedFactor="0.33" containerClass="parallax-img-container">
-        <img src="/img/mario_bg_1.png">
+<!--     <div class="background-image">
+      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container">
+        <img src="/img/mario_bg_1.png"/>
       </parallax>
-    </div>
+    </div> -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
-      <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'">Video Game Exchange</router-link>
+      <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'"><h1>Video Game Exchange</h1></router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,15 +46,15 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div class="container">
+    <div class="container content-container">
       <router-view/>
-      <div class="spacer">
-      </div>
+<!--       <div class="spacer">
+      </div> -->
     </div>
 
     <footer class="container-fluid">
       <div class="row">
-        <div class="col-3 footer-container">
+        <div class="col-xs-12 col-md-4 footer-container">
           <p>
             <a href="https://github.com/RollerCoasterRoss" class="link-v-no-style" target="_blank" rel="noopener noreferrer">
               Github
@@ -66,10 +66,8 @@
             </a>
           </p>
         </div>
-        <div class="col-6 footer-container">
-          <h1>Game On!</h1>
-        </div>
-        <div class="col-3 footer-container">
+        <div class="col-xs-12 col-md-4"></div>
+        <div class="col-xs-12 col-md-4 footer-container">
           <p>Contact:</p>
           <p>Name: Ross Whitehead</p>
           <p>Phone: 847-436-1169</p>
@@ -101,11 +99,20 @@
   }
 
   body {
+    height: 100%;
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
+    background: url(/img/mario_bg_1.png);
+    background-position: center;
   }
 
-  .background-image {
+  #app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+/*  .background-image {
     position: fixed;
     width: 100%;
     z-index: -1000;
@@ -114,43 +121,114 @@
   .background-image img {
     min-width: 100%;
     height: 100%;
-  }
+  }*/
 
-  .parallax-img-container {
+/*  .parallax-img-container {
     min-width: 100%;
     overflow: hidden;
     height: 250%;
+  }*/
+
+  /* xs */
+  @media screen and (max-width: 575px) {
+    .navbar h1 {
+      font-size: 8px;
+    }
+  }
+
+  /* sm */
+  @media screen and (min-width: 576px) {
+    .navbar h1 {
+      font-size: 10px;
+    }
+  }
+
+  /* md */
+  @media screen and (min-width: 768px) {
+    .navbar h1 {
+      font-size: 10px;
+    }
+  }
+
+  /* lg */
+  @media screen and (min-width: 992px) {
+    .navbar h1 {
+      font-size: 20px;
+      display: inline;
+    }
+  }
+
+  /* xl */
+  @media screen and (min-width: 1200px) {
+    .navbar h1 {
+      font-size: 30px;
+    }
+  }
+
+  a.nav-link {
+    text-align: center;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    clear: both;
+    text-align: center;
+  }
+
+  .content-container {
+    flex-grow: 1;
   }
 
   footer {
-    bottom: 0;
-    min-height: 200px;
     background-color: var(--vge-dark-2);
   }
 
   .footer-container {
-    padding-top: 2%;
     text-align: center;
-    width: 100%;
-    min-height: 200px;
+    padding: 2% 0;
   }
 
-  .footer-container a {
+/*  .footer-container a {
     color: inherit;
     text-decoration: none;
-  }
+  }*/
 
-  .footer-container h1{
-    margin-top: 4%;
-    font-size: 65px;
-  }
+/*  .footer-container h1 {
+    font-size: 40px;
+  }*/
 
-  .footer-container p{
+  .footer-container p {
     font-size: 12px;
   }
 
-  table {
-    font-size: 12px;
+  @media screen and (max-width: 575px) {
+    table {
+      font-size: 8px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    table {
+      font-size: 8px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    table {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    table {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    table {
+      font-size: 12px;
+    }
   }
 
   input {
@@ -304,12 +382,33 @@
     font-size: .5rem;
   }
 
-  .form-inline, .custom-input {
-    font-size: .6rem;
+  .form-inline {
+    font-size: 0.75rem;
+    width: 100%;
+  }
+
+  .custom-input {
+    font-size: 0.5rem;
   }
 
   select.custom-select.standard-select {
-    font-size: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .videoGamesSearchContainer {
+    width: 100%;
+  }
+
+  #inlineFormInputSearch {
+    width: 100%;
+  }
+
+  #inlineFormDropdownPlatform {
+    width: 100%;
+  }
+
+  #inlineFormDropdownGenre {
+    width: 100%;
   }
 
   .bg-v-dark-1 {
@@ -449,9 +548,9 @@
     border-bottom: 2px solid black;
   }
 
-  .spacer {
+/*  .spacer {
     height: 60px;
-  }
+  }*/
 
   .spacer-2 {
     height: 100px;

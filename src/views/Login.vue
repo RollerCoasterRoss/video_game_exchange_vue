@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="section-container">
+    <div class="section-container container-md">
       <div class="title-container pixel-border">
         <div class="row">
           <div class="col-2"/>
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="section-container">
+    <div class="section-container container-md">
       <form v-on:submit.prevent="submit()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>

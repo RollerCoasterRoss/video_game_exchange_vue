@@ -12,19 +12,15 @@
       </div>
     
       <div class="row">
-        <form class="form-inline col">
-          <label class="mr-sm-3" for="inlineFormInputSearch">Search</label>
-          <input type="text" class="form-control mb-2 mr-sm-3 custom-input" id="inlineFormInputSearch" v-model="searchTerm">
-        </form>
-        <div class="col">
-          <div class="form-group btn-v-button-group">
-            <span class="float-right">
-              <span class="btn-v-box">
-                <router-link to="/video_games/new" class="btn-v btn-v-brand">Add Video Game</router-link>
-              </span>
+        <form class="form-inline col-12">
+          <div class="videoGamesSearchContainer">
+            <label class="col-2 mx-0" for="inlineFormInputSearch">Search</label>
+            <input type="text" class="form-control col-6 mx-0 custom-input" id="inlineFormInputSearch" v-model="searchTerm"/>
+            <span class="col-auto ml-3 btn-v-box">
+              <router-link to="/video_games/new" class="btn-v btn-v-brand">Add Video Game</router-link>
             </span>
           </div>
-        </div>
+        </form>
       </div>
     </div>
 

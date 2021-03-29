@@ -14,27 +14,31 @@
 
     <div class="section-container">
       <div class="row">
-        <div class="col-auto"></div>
-        <form class="form-inline col-auto">
-          <label class="mr-sm-3" for="inlineFormInputSearch">Search</label>
-          <input type="text" class="form-control mb-2 mr-sm-3 custom-input" id="inlineFormInputSearch" v-model="searchTerm">
+        <form class="form-inline mb-3">
+          <div class="col-4">
+            <label for="inlineFormInputSearch">Search</label>
+            <input type="text" class="form-control custom-input" id="inlineFormInputSearch" v-model="searchTerm"/>
+          </div>
 
-          <label class="mr-sm-3" for="inlineFormDropdownPlatform">Platform</label>
-          <select class="form-control mb-2 mr-sm-3 custom-select custom-input" id="inlineFormDropdownPlatform" v-model="platformFilter">
-            <option v-for="platformOption in platformOptions" :value="platformOption.value">
-              {{ platformOption.display }}
-            </option>
-          </select>
+          <div class="col-4">
+            <label for="inlineFormDropdownPlatform">Platform</label>
+            <select class="form-control custom-select custom-input" id="inlineFormDropdownPlatform" v-model="platformFilter">
+              <option v-for="platformOption in platformOptions" :value="platformOption.value">
+                {{ platformOption.display }}
+              </option>
+            </select>
+          </div>
 
-          <label class="mr-sm-3" for="inlineFormDropdownGenre">Genre</label>
-          <select class="form-control mb-2 mr-sm-2 custom-select custom-input" id="inlineFormDropdownGenre" v-model="genreFilter">
-            <option value="">Unspecified</option>
-            <option v-for="genre in genres">
-              {{ genre.name }}
-            </option>
-          </select>
+          <div class="col-4">
+            <label for="inlineFormDropdownGenre">Genre</label>
+            <select class="form-control custom-select custom-input" id="inlineFormDropdownGenre" v-model="genreFilter">
+              <option value="">Unspecified</option>
+              <option v-for="genre in genres">
+                {{ genre.name }}
+              </option>
+            </select>
+          </div>
         </form>
-        <div class="col-auto"></div>
       </div>
 
       <table class="table mb-5">
