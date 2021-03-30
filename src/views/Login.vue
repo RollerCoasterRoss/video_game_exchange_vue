@@ -1,18 +1,18 @@
 <template>
   <div class="login">
-    <div class="section-container container-md">
+    <div class="section-container">
       <div class="title-container pixel-border">
         <div class="row">
           <div class="col-2"/>
           <div class="col-8 underline-header">
-            <h2 class="text-center">Login</h2>
+            <h3 class="text-center">Login</h3>
           </div>
           <div class="col-2"/>
         </div>
       </div>
     </div>
 
-    <div class="section-container container-md">
+    <div class="section-container">
       <form v-on:submit.prevent="submit()">
         <ul>
           <li class="text-danger" v-for="error in errors">{{ error }}</li>

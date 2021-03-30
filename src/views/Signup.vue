@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-2"/>
           <div class="col-8 underline-header">
-            <h2 class="text-center">Sign Up</h2>
+            <h3 class="text-center">Sign Up</h3>
           </div>
           <div class="col-2"/>
         </div>

@@ -46,10 +46,8 @@
       <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
     </div>
 
-    <div class="container content-container">
+    <div class="container-lg content-container">
       <router-view/>
-<!--       <div class="spacer">
-      </div> -->
     </div>
 
     <footer class="container-fluid">
@@ -132,28 +130,31 @@
   /* xs */
   @media screen and (max-width: 575px) {
     .navbar h1 {
-      font-size: 8px;
+      font-size: 10px;
+      display: inline;
     }
   }
 
   /* sm */
   @media screen and (min-width: 576px) {
     .navbar h1 {
-      font-size: 10px;
+      font-size: 14px;
+      display: inline;
     }
   }
 
   /* md */
   @media screen and (min-width: 768px) {
     .navbar h1 {
-      font-size: 10px;
+      font-size: 18px;
+      display: inline;
     }
   }
 
   /* lg */
   @media screen and (min-width: 992px) {
     .navbar h1 {
-      font-size: 20px;
+      font-size: 24px;
       display: inline;
     }
   }
@@ -162,6 +163,7 @@
   @media screen and (min-width: 1200px) {
     .navbar h1 {
       font-size: 30px;
+      display: inline;
     }
   }
 
@@ -188,15 +190,6 @@
     padding: 2% 0;
   }
 
-/*  .footer-container a {
-    color: inherit;
-    text-decoration: none;
-  }*/
-
-/*  .footer-container h1 {
-    font-size: 40px;
-  }*/
-
   .footer-container p {
     font-size: 12px;
   }
@@ -209,25 +202,25 @@
 
   @media screen and (min-width: 576px) {
     table {
-      font-size: 8px;
+      font-size: 10px;
     }
   }
 
   @media screen and (min-width: 768px) {
     table {
-      font-size: 10px;
+      font-size: 12px;
     }
   }
 
   @media screen and (min-width: 992px) {
     table {
-      font-size: 10px;
+      font-size: 15px;
     }
   }
 
   @media screen and (min-width: 1200px) {
     table {
-      font-size: 12px;
+      font-size: 20px;
     }
   }
 
@@ -269,10 +262,39 @@
     border-radius: 25px;
   }
 
+  @media screen and (max-width: 575px) {
+    .section-container label {
+      font-size: 8px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .section-container label {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-container label {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .section-container label {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .section-container label {
+      font-size: 20px;
+    }
+  }
+
   .title-container {
     color: black;
     margin: 20px 0;
-    padding: 10px 0;
     background-color: var(--vge-light-1);
   }
 
