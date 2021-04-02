@@ -43,7 +43,7 @@
     </nav>
 
     <div v-if="userEmail" class="container-fluid bg-v-brand text-white vge-logged-in-line">
-      <h5 class="text-center">Logged in as:  {{ userEmail }}</h5>
+      <h5>Logged in as:  {{ userEmail }}</h5>
     </div>
 
     <div class="container-lg content-container">
@@ -127,31 +127,27 @@
     height: 250%;
   }*/
 
-  /* xs */
   @media screen and (max-width: 575px) {
     .navbar h1 {
-      font-size: 10px;
+      font-size: 12px;
       display: inline;
     }
   }
 
-  /* sm */
   @media screen and (min-width: 576px) {
     .navbar h1 {
-      font-size: 14px;
+      font-size: 12px;
       display: inline;
     }
   }
 
-  /* md */
   @media screen and (min-width: 768px) {
     .navbar h1 {
-      font-size: 18px;
+      font-size: 16px;
       display: inline;
     }
   }
 
-  /* lg */
   @media screen and (min-width: 992px) {
     .navbar h1 {
       font-size: 24px;
@@ -159,10 +155,9 @@
     }
   }
 
-  /* xl */
   @media screen and (min-width: 1200px) {
     .navbar h1 {
-      font-size: 30px;
+      font-size: 32px;
       display: inline;
     }
   }
@@ -202,25 +197,25 @@
 
   @media screen and (min-width: 576px) {
     table {
-      font-size: 10px;
+      font-size: 8px;
     }
   }
 
   @media screen and (min-width: 768px) {
     table {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 
   @media screen and (min-width: 992px) {
     table {
-      font-size: 15px;
+      font-size: 12px;
     }
   }
 
   @media screen and (min-width: 1200px) {
     table {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 
@@ -282,7 +277,7 @@
 
   @media screen and (min-width: 992px) {
     .section-container label {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
 
@@ -296,6 +291,66 @@
     color: black;
     margin: 20px 0;
     background-color: var(--vge-light-1);
+  }
+
+  @media screen and (max-width: 575px) {
+    .jumbotron h1, .title-container h3 {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .jumbotron h1, .title-container h3 {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .jumbotron h1, .title-container h3 {
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .jumbotron h1, .title-container h3 {
+      font-size: 28px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .jumbotron h1, .title-container h3 {
+      font-size: 32px;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    .jumbotron p {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .jumbotron p {
+      font-size: 10px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .jumbotron p {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .jumbotron p {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .jumbotron p {
+      font-size: 20px;
+    }
   }
 
   .pixel-border {
@@ -392,12 +447,22 @@
     padding: 2px;
   }
 
-  .btn-v-box + .btn-v-box {
-    margin-left: 10px;
+  @media screen and (max-width: 767px) {
+    .btn-v-box-group {
+      width: 100%;
+      text-align: center;
+    }
   }
 
-  .btn-v-align-right {
-    text-align: right;
+  @media screen and (min-width: 768px) {
+    .btn-v-box-group {
+      width: 100%;
+      text-align: right;
+    }
+
+    .btn-v-box-group span {
+      margin-left: 10px;
+    }
   }
 
   .btn-sm {
@@ -558,8 +623,9 @@
   }
 
   .vge-logged-in-line h5 {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    font-size: 0.5em;
+    text-align: center;
+    margin: 6px 0;
   }
 
   .nowrap {
