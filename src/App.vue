@@ -130,35 +130,35 @@
   @media screen and (max-width: 575px) {
     .navbar h1 {
       font-size: 12px;
-      display: inline;
+      margin: 6px 0;
     }
   }
 
   @media screen and (min-width: 576px) {
     .navbar h1 {
-      font-size: 12px;
-      display: inline;
+      font-size: 16px;
+      margin: 8px 0;
     }
   }
 
   @media screen and (min-width: 768px) {
     .navbar h1 {
-      font-size: 16px;
-      display: inline;
+      font-size: 24px;
+      margin: 10px 0;
     }
   }
 
   @media screen and (min-width: 992px) {
     .navbar h1 {
-      font-size: 24px;
-      display: inline;
+      font-size: 28px;
+      margin: 18px 0;
     }
   }
 
   @media screen and (min-width: 1200px) {
     .navbar h1 {
-      font-size: 32px;
-      display: inline;
+      font-size: 36px;
+      margin: 24px 0;
     }
   }
 
@@ -166,10 +166,16 @@
     text-align: center;
   }
 
-  .dropdown-menu {
-    position: fixed;
-    clear: both;
-    text-align: center;
+  @media screen and (max-width: 991px) {
+    .dropdown-menu {
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .dropdown-menu {
+      text-align: right;
+    }
   }
 
   .content-container {
@@ -623,7 +629,7 @@
   }
 
   .vge-logged-in-line h5 {
-    font-size: 0.5em;
+    font-size: 1rem;
     text-align: center;
     margin: 6px 0;
   }

@@ -69,7 +69,7 @@
         </div>
 
         <div class="form-group">
-          <div class="btn-v-align-right">
+          <div class="text-right">
             <span class="btn-v-box">
               <input type="submit" class="btn-v btn-v-brand" value="Submit">
             </span>

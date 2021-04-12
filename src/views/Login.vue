@@ -26,11 +26,11 @@
           <input type="password" class="form-control" v-model="password">
         </div>
         <div class="form-group">
-          <div class="btn-v-align-right">
+          <div class="text-right">
             <span class="btn-v-box">
               <input type="submit" class="btn-v btn-v-brand" value="Submit">
             </span>
-            <span class="btn-v-box">
+            <span class="btn-v-box ml-1">
               <router-link to="/signup" class="btn-v btn-v-brand">Sign Up</router-link>
             </span>
           </div>
