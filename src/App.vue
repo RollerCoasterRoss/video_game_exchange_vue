@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-<!--     <div class="background-image">
-      <parallax parallax :speedFactor="0.25" containerClass="parallax-img-container">
-        <img src="/img/mario_bg_1.png"/>
-      </parallax>
-    </div> -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
       <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'"><h1>Video Game Exchange</h1></router-link>
