@@ -110,23 +110,6 @@
     min-height: 100vh;
   }
 
-/*  .background-image {
-    position: fixed;
-    width: 100%;
-    z-index: -1000;
-  }
-
-  .background-image img {
-    min-width: 100%;
-    height: 100%;
-  }*/
-
-/*  .parallax-img-container {
-    min-width: 100%;
-    overflow: hidden;
-    height: 250%;
-  }*/
-
   @media screen and (max-width: 575px) {
     .navbar h1 {
       font-size: 12px;
