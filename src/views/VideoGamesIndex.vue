@@ -25,32 +25,34 @@
     </div>
 
     <div class="section-container">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr class="text-center">
-            <th scope="col">Title</th>
-            <th scope="col">Platform</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Online</th>
-            <th scope="col">Released</th>
-            <th scope="col">My Collection</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-v-light-2 text-center" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
-            <th scope="row"><router-link class="link-v-no-style" :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
-            <td>{{ videoGame.formatted.platform }}</td>
-            <td>{{ videoGame.formatted.rating_category }}</td>
-            <td>{{ videoGame.formatted.online }}</td>
-            <td>{{ videoGame.release_year }}</td>
-            <td>
-              <button class="btn-v btn-v-brand btn-sm" @click="createCartridge(videoGame)">
-                Add
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr class="text-center">
+              <th scope="col">Title</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Online</th>
+              <th scope="col">Released</th>
+              <th scope="col">My Collection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-v-light-2 text-center" v-for="videoGame in filterBy(videoGames, searchTerm, 'title')">
+              <th scope="row"><router-link class="link-v-no-style" :to="'/video_games/' + videoGame.id">{{ videoGame.title }}</router-link></th>
+              <td>{{ videoGame.formatted.platform }}</td>
+              <td>{{ videoGame.formatted.rating_category }}</td>
+              <td>{{ videoGame.formatted.online }}</td>
+              <td>{{ videoGame.release_year }}</td>
+              <td>
+                <button class="btn-v btn-v-brand btn-sm" @click="createCartridge(videoGame)">
+                  Add
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <div class="spacer-2">

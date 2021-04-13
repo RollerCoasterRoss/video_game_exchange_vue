@@ -16,7 +16,7 @@
         <p>{{ user.email }}</p>
         <hr class="my-2"/>
         <p>{{ user.street }}, {{ user.unit }}</p>
-        <p>{{ user.city }}, {{ user.state }} {{ user.zip }}</p>
+        <p>{{ user.city }},{{ user.state }} {{ user.zip }}</p>
         <hr class="my-2"/>
         <div class="row">
           <div class="btn-v-box-group">

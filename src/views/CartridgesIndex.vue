@@ -41,37 +41,36 @@
         </form>
       </div>
 
-      <table class="table mb-5">
-        <thead class="thead-dark">
-          <tr class="text-center">
-            <th scope="col">Title</th>
-            <th scope="col">Platform</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Online</th>
-            <th scope="col">Released</th>
-            <th scope="col">Owner</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="table-v-light-2 text-center" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
-            <th class="font-weight-normal" scope="row">{{ cartridge.video_game.title }}</th>
-            <td>{{ cartridge.video_game.formatted.platform }}</td>
-            <td>{{ cartridge.video_game.formatted.rating_category }}</td>
-            <td>{{ cartridge.video_game.formatted.online }}</td>
-            <td>{{ cartridge.video_game.release_year }}</td>
-            <td>{{ cartridge.owner_name }}</td>
-            <td>
-              <button class="btn-v btn-v-brand btn-sm" @click="borrowCartridge(cartridge)">
-                Borrow
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="spacer-2">
+      <div class="table-responsive">
+        <table class="table mb-5">
+          <thead class="thead-dark">
+            <tr class="text-center">
+              <th scope="col">Title</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Online</th>
+              <th scope="col">Released</th>
+              <th scope="col">Owner</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="table-v-light-2 text-center" v-for="cartridge in filterBy(filterBy(cartridges, platformFilter, 'video_game.platform'), searchTerm, 'video_game.title')">
+              <th class="font-weight-normal" scope="row">{{ cartridge.video_game.title }}</th>
+              <td>{{ cartridge.video_game.formatted.platform }}</td>
+              <td>{{ cartridge.video_game.formatted.rating_category }}</td>
+              <td>{{ cartridge.video_game.formatted.online }}</td>
+              <td>{{ cartridge.video_game.release_year }}</td>
+              <td>{{ cartridge.owner_name }}</td>
+              <td>
+                <button class="btn-v btn-v-brand btn-sm" @click="borrowCartridge(cartridge)">
+                  Borrow
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
   </div>

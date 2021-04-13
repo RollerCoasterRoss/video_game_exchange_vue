@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-v-dark-2">
       <router-link class="navbar-brand" :to="userEmail ? '/' : '/login'"><h1>Video Game Exchange</h1></router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,11 +8,11 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+<!--           <li class="nav-item">
             <span v-if="userEmail">
               <router-link class="nav-link" to="/cartridges">Borrow</router-link>
             </span>
-          </li>
+          </li> -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu
@@ -96,7 +95,7 @@
     font-family: 'Press Start 2P', sans-serif;
     color: var(--vge-light-1);
     background: url(/img/mario_bg_1.png);
-    background-position: center;
+    background-size: cover;
   }
 
   #app {
@@ -108,51 +107,96 @@
   @media screen and (max-width: 575px) {
     .navbar h1 {
       font-size: 12px;
-      margin: 6px 0;
+      margin: 4px 0;
     }
   }
 
   @media screen and (min-width: 576px) {
     .navbar h1 {
       font-size: 16px;
-      margin: 8px 0;
+      margin: 5px 0;
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    .navbar h1 {
+      font-size: 20px;
+      margin: 6px 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (orientation: portrait) {
     .navbar h1 {
       font-size: 24px;
-      margin: 10px 0;
+      margin: 8px 0;
     }
   }
 
   @media screen and (min-width: 992px) {
     .navbar h1 {
       font-size: 28px;
-      margin: 18px 0;
+      margin: 9px 0;
     }
   }
 
   @media screen and (min-width: 1200px) {
     .navbar h1 {
       font-size: 36px;
-      margin: 24px 0;
+      margin: 12px 0;
     }
   }
 
-  a.nav-link {
-    text-align: center;
+  @media screen and (max-width: 575px) {
+    .nav-link {
+      text-align: center;
+    }
+    .dropdown-item {
+      font-size: 10px;
+      text-align: center;
+    }
   }
 
-  @media screen and (max-width: 991px) {
-    .dropdown-menu {
+  @media screen and (min-width: 576px) {
+    .nav-link {
+      text-align: center;
+    }
+    .dropdown-item {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (orientation: landscape) {
+    .nav-link {
+      text-align: center;
+    }
+    .dropdown-item {
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    .nav-link {
+      text-align: center;
+    }
+    .dropdown-item {
+      font-size: 16px;
       text-align: center;
     }
   }
 
   @media screen and (min-width: 992px) {
-    .dropdown-menu {
-      text-align: right;
+    .dropdown-item {
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .dropdown-item {
+      font-size: 24px;
+      text-align: center;
     }
   }
 
@@ -606,10 +650,36 @@
     background-color: var(--vge-table-3);
   }
 
-  .vge-logged-in-line h5 {
-    font-size: 1rem;
-    text-align: center;
-    margin: 6px 0;
+  @media screen and (max-width: 767px) {
+    .vge-logged-in-line h5 {
+      font-size: 10px;
+      text-align: center;
+      margin: 6px 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .vge-logged-in-line h5 {
+      font-size: 12px;
+      text-align: center;
+      margin: 8px 0;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .vge-logged-in-line h5 {
+      font-size: 14px;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .vge-logged-in-line h5 {
+      font-size: 16px;
+      text-align: center;
+      margin: 12px 0;
+    }
   }
 
   .nowrap {
@@ -618,14 +688,6 @@
 
   .underline-header {
     border-bottom: 2px solid black;
-  }
-
-/*  .spacer {
-    height: 60px;
-  }*/
-
-  .spacer-2 {
-    height: 100px;
   }
 </style>
 
